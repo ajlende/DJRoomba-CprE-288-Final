@@ -9,4 +9,6 @@ ADDING, COMMITTING, PUSHING
 
 3)	'git commit -m [message]' to commit changes to the local repository
 
-4)	'git push' pushes all commits to the server
+4)	'git push origin [branch]' pushes all commits to the branch on the server
+
+5)  On Gitlab, submit a Merge Request via the Merge Requests Tab once ready to add everything in your branch to the final Project
