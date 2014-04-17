@@ -16,3 +16,21 @@ ADDING, COMMITTING, PUSHING
 4) 'git push origin [branch]' pushes all commits to the branch on the server
 
 5) Once ready to add everything in your branch to the final project, submit a Merge Request via the Merge Requests Tab in GitLab
+
+
+USING BRANCHES
+
+Branches have been created for the MatLab and iRobot portions of the project. Each person should then create their own
+branch off of that.
+
+1) On the local machine, 'git branch [branch name]' to create the branch.
+
+2) 'git checkout [branch name]' to switch to the branch you are working on.
+
+3) Make changes to your branch
+
+4) 'git add [file name]' to tell git to track the file
+
+5) 'git commit -m [message]' to commit the changes
+
+6) 'git push origin [branch name]' to push your branch to the server
