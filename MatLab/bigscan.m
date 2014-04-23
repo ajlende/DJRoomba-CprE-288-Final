@@ -1,14 +1,17 @@
+%% 180 degree Scan
+%Author: Benjamin Williams
+%Scans a 180 degree arc and stores data in Matlab. Plots the result.
 
+function null = bigscan(port)
 data = zeros(90,3);
-
 %Send the small scan seriaL command
-fwrite(serial, 'S');
+fwrite(port, 'S');
 
 i = 0;
 
 for j=1:90
 %Read
-sentence = fscanf(serial);
+sentence = fscanf(port);
 %sentence
 
 %Tack on new data
@@ -35,4 +38,5 @@ data(:,1) = data(:,1) * 3.14/180;
 polar(data(:,1), data(:,2),'.r'); hold on;
 polar(data(:,1), data(:,3),'.');
 drawnow;
-i = i +1;
+i = i+1;
+%close all

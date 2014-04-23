@@ -1,3 +1,10 @@
+%% BOT GUI
+%Author: Alex 
+%Push button function added by: Christofer Sheafe
+
+%Utilizes controlpanel to control bot via GUI. See controlpanel for
+%operation.
+
 function varargout = activatedjroomba(varargin)
 % ACTIVATEDJROOMBA MATLAB code for activatedjroomba.fig
 %      ACTIVATEDJROOMBA, by itself, creates a new ACTIVATEDJROOMBA or raises the existing
