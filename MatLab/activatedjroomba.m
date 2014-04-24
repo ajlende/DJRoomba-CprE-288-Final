@@ -2,7 +2,7 @@
 %Author: Alex 
 %Push button function added by: Christofer Sheafe
 
-%Utilizes controlpanel to control bot via GUI. See controlpanel for
+%Utilizes controlpanel.m to control bot via GUI. See controlpanel for
 %operation.
 
 function varargout = activatedjroomba(varargin)

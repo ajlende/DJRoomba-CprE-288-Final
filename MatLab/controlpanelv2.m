@@ -8,7 +8,7 @@
 %commands: 'forward','left','right','smallscan','bigscan'
 %%
 function null = controlpanelv2(baud,mode,command) 
-port = serialinit(baud);%serial-object-id
+port = serialinitv2(baud);%serial-object-id
 display(command)
 
 if mode
