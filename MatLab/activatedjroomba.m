@@ -29,7 +29,7 @@ function varargout = activatedjroomba(varargin)
 
 % Edit the above text to modify the response to help activatedjroomba
 
-% Last Modified by GUIDE v2.5 22-Apr-2014 19:37:17
+% Last Modified by GUIDE v2.5 24-Apr-2014 17:11:44
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -126,5 +126,26 @@ function turnright_Callback(hObject, eventdata, handles)
 % --- Otherwise, executes on mouse press in 5 pixel border or over smallscan.
 function smallscan_ButtonDownFcn(hObject, eventdata, handles)
 % hObject    handle to smallscan (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in serialinit.
+function serialinit_Callback(hObject, eventdata, handles)
+% hObject    handle to serialinit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in serialclose.
+function serialclose_Callback(hObject, eventdata, handles)
+% hObject    handle to serialclose (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton9.
+function pushbutton9_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)

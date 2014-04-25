@@ -38,5 +38,6 @@ data(:,1) = data(:,1) * 3.14/180;
 polar(data(:,1), data(:,2),'.r'); hold on;
 polar(data(:,1), data(:,3),'.');
 drawnow;
+hold off;
 i = i+1;
 %close all

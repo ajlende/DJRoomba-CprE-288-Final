@@ -8,7 +8,9 @@
 %%
 function port = serialinitv2(baud)
 out = instrfind;
-fclose(out);
+%if out ~=[]
+    %fclose(out);
+%end
 delete(out);
 %clear all
 
@@ -17,7 +19,7 @@ if baud == 38400
 elseif baud == 57600
     port = serial('COM4');
 end
-
+%port = out;
 set(port, 'BaudRate', baud);
 fopen(port);
 display('Connected')

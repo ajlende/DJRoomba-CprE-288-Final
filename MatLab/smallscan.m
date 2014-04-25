@@ -37,5 +37,6 @@ data(:,1) = data(:,1) * 3.14/180;
 %plot data
 polar(data(:,1), data(:,2),'.r'); hold on;
 polar(data(:,1), data(:,3),'.');
+hold off;
 drawnow;
 i = i +1;
