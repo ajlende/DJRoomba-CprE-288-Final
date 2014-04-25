@@ -1,3 +1,5 @@
+#include "open_interface.h"
+
 /// Blocks for a specified number of milliseconds
 void wait_ms(unsigned int time_val);
 
@@ -37,7 +39,7 @@ float ping_read(void);
 
 void timer3_init(void);
 
-void servo_turn(float degrees);
+void servo_turn(int degrees);
 
 // Initialize the IR distance sensor
 void ADC_init(void);
@@ -46,3 +48,13 @@ unsigned int ADC_read(char channel);
 
 // Calculate the distance from the ADC result
 float calcCm(unsigned int DigitalOutput);
+
+char move_forward(oi_t *sensor, int centimeters);
+
+
+void move_backward(oi_t *sensor, int centimeters);
+
+void turn_counterclockwise(oi_t *sensor, int degrees);
+
+void turn_clockwise(oi_t *sensor, int degrees);
+

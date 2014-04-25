@@ -11,6 +11,7 @@
 #include "util.h"
 #include "lcd.h"
 #include "usart.h"
+#include "open_interface.h"
 #include <math.h>
 
 typedef struct object_s {
@@ -35,11 +36,15 @@ int main(void)
 	
 	timer3_init(); // Initialize the servo motor
 	
-	float degrees = 0;
+	oi_t *sensor_data = oi_alloc();
+	oi_init(sensor_data); // should turn the iRobot Create's power LED yellow
+	
+	int degrees = 80;
 	float IRDistance = 0;
 	float PingDistance = 0;
 	unsigned int raw = 0;
 	int i = 0;
+	char serialInput = 0;
 	
 	servo_turn(degrees);
 	
@@ -50,35 +55,99 @@ int main(void)
 	//USART_SendString(OutputString);
 	while(1)
 	{
-	while(degrees <= 180) {
 		
-		// Average IR distances for a more stable measurement
-		raw = 0;
-		for(i = 0;i<5;i++)
-		{
-			raw += ADC_read(2);
-			wait_ms(40);
-		}
-
-		IRDistance = calcCm(raw/5);
-		PingDistance = ping_read();
-		
-		sprintf(OutputString, "%.0f %.2f %.2f", degrees, IRDistance, PingDistance);
-		
-		//lprintf(OutputString);
-		//wait_ms(200);
-		
-		// sprintf(OutputString, "%14.0f%20.2f\n", degrees, IRDistance);
-		
-		USART_SendString(OutputString);
-		
-		degrees += 2;
-		
-		servo_turn(degrees);
-
-	}
-	degrees = 0;
-	servo_turn(90);
-	}
+		serialInput = USART_Receive();
 	
+		//Big Scan
+		if(serialInput == 'S')
+		{
+			while(degrees <= 180) {
+		
+				// Average IR distances for a more stable measurement
+				raw = 0;
+				for(i = 0;i<3;i++)
+				{
+					raw += ADC_read(2);
+					wait_ms(20);
+				}
+
+				IRDistance = calcCm(raw/3);
+				PingDistance = ping_read();
+		
+				sprintf(OutputString, "%d %.2f %.2f", degrees, IRDistance, PingDistance);
+		
+				//lprintf(OutputString);
+				//wait_ms(200);
+		
+				// sprintf(OutputString, "%14.0f%20.2f\n", degrees, IRDistance);
+		
+				USART_SendString(OutputString);
+		
+				degrees += 2;
+		
+				servo_turn(degrees);
+
+			}
+			degrees = 0;
+			servo_turn(90);
+		}
+		
+		//Small Scan
+		if(serialInput == 's')
+		{
+			degrees = 45;
+			servo_turn(degrees);
+			while(degrees <= 135) {
+				
+				// Average IR distances for a more stable measurement
+				raw = 0;
+				for(i = 0;i<3;i++)
+				{
+					raw += ADC_read(2);
+					wait_ms(20);
+				}
+
+				IRDistance = calcCm(raw/3);
+				PingDistance = ping_read();
+				
+				sprintf(OutputString, "%d %.2f %.2f", degrees, IRDistance, PingDistance);
+				
+				//lprintf(OutputString);
+				//wait_ms(200);
+				
+				// sprintf(OutputString, "%14.0f%20.2f\n", degrees, IRDistance);
+				
+				USART_SendString(OutputString);
+				
+				degrees += 2;
+				
+				servo_turn(degrees);
+
+			}
+			degrees = 0;
+			servo_turn(90);
+		}
+		
+		if(serialInput == 'f')
+		{
+			move_forward(sensor_data, 20);
+		}
+		
+		if(serialInput == 'r')
+		{
+			turn_clockwise(sensor_data, 45);
+		}
+		
+		if(serialInput == 'l')
+		{
+			turn_counterclockwise(sensor_data, 45);
+		}
+		// USART_SendString("Small Scan Complete");
+		
+		if(serialInput == 'Q')
+		{
+			oi_free(sensor_data);
+			return;
+		}
 	}
+}

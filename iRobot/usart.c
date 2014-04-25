@@ -5,7 +5,7 @@
 
 void serial_init(void) {
 
-	unsigned long baud = 38400;
+	unsigned long baud = 57600;
 
 	// WAS 51
 	baud = (F_CPU/8/baud)-1;
