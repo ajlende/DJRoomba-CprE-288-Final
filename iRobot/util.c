@@ -38,6 +38,8 @@ void ADC_init(void) {
 
 
 
+
+
 // Read the output from the ADC, currently using channel 2
 unsigned int ADC_read(char channel) {
 	
@@ -245,7 +247,7 @@ float time2dist(unsigned int time)
 	return .277 * ((float) time) - 31.944;
 }
 
-void servo_turn(float degrees)
+void servo_turn(int degrees)
 {
 	// The servo only moves from 0 to 180 degrees.
 	//if (degrees > 180 || degrees < 0) return;
@@ -325,4 +327,104 @@ char read_push_buttons(void) {
 	}
 	
 	return 0;
+}
+
+//Movement Functions
+//Move forward contains all other functions, allows for error checking while moving
+char move_forward(oi_t *sensor, int centimeters)
+{
+	int sum = 0;
+	int dist = 0;
+	int new_dist = 0;
+	char outputString[20];
+	oi_set_wheels(150, 150); // move forward
+
+	while (sum < centimeters*10)
+	{
+		oi_update(sensor);
+		sum += sensor->distance;
+
+		if(sensor->bumper_left)
+		{
+			oi_set_wheels(0, 0); // stop
+
+			move_backward(sensor,10);
+			turn_clockwise(sensor,45);
+
+			USART_SendString("Left Bumper Triggered"); //
+			return 1;
+		}
+		else if(sensor->bumper_right)
+		{
+			oi_set_wheels(0, 0); // stop
+
+			move_backward(sensor,10);
+			turn_counterclockwise(sensor,45);
+
+			USART_SendString("Right Bumper Triggered");
+			return 2;
+		}
+		if((sensor->cliff_frontleft_signal > 550) || (sensor->cliff_frontright_signal > 450))
+		{
+			lprintf("Line Detected");
+			oi_set_wheels(0,0);
+			USART_SendString("Line Detected");
+			return 3;
+		}
+		else if((sensor->wheeldrop_caster == 1) || (sensor->wheeldrop_left == 1) || (sensor->wheeldrop_right == 1) || (sensor->cliff_frontleft_signal < 10) || (sensor->cliff_frontright_signal < 10)|| (sensor->cliff_left_signal < 10) || (sensor->cliff_right_signal < 10))
+		{
+			lprintf("Cliff Edge Detected");
+			move_backward(sensor,10);
+
+			USART_SendString("Cliff Edge Detected");
+			return 4;
+		}
+		return 0;
+	}
+
+	oi_set_wheels(0, 0); // stop
+	
+	sprintf(outputString, "Moved %f centimeters", sum);
+	
+	USART_SendString(outputString);
+
+}
+
+
+void move_backward(oi_t *sensor, int centimeters)
+{
+	int sum = 0;
+	oi_set_wheels(-200, -200); // move backward
+	while (sum < centimeters*10) {
+		oi_update(sensor);
+		sum -= sensor->distance;
+	}
+
+	oi_set_wheels(0, 0); // stop
+}
+
+void turn_clockwise(oi_t *sensor, int degrees)
+{
+	int sum = 0;
+
+	oi_set_wheels(-200, 200);
+	while (sum < degrees-12) {
+		oi_update(sensor);
+		sum -= sensor->angle;
+
+	}
+	oi_set_wheels(0, 0); // stop
+}
+
+void turn_counterclockwise(oi_t *sensor, int degrees)
+{
+	int sum = 0;
+
+	oi_set_wheels(200, -200);
+	while (sum < degrees-12) {
+		oi_update(sensor);
+		sum += sensor->angle; //maybe
+
+	}
+	oi_set_wheels(0, 0); // stop
 }
