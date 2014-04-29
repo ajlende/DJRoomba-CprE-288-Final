@@ -50,6 +50,8 @@ int main(void)
 	
 	char OutputString[100];
 	
+	char receivedVars[9];
+	
 	//sprintf(OutputString, "%s%1s%1s", "Degrees", "IR Distance (cm)", "Sonar Distance (cm)");
 	
 	//USART_SendString(OutputString);
@@ -58,6 +60,8 @@ int main(void)
 		
 		serialInput = USART_Receive();
 	
+	
+		
 		//Big Scan
 		if(serialInput == 'S')
 		{
@@ -130,19 +134,40 @@ int main(void)
 		
 		if(serialInput == 'f')
 		{
-			move_forward(sensor_data, 20);
+			while(seralInput == 'f')
+			{
+				seralInput = USART_Recieve();
+			}
+			
+			int tempDistance = ((int) serialInput - 48) * 10;
+			
+			
+			move_forward(sensor_data, tempDistance);
 		}
 		
 		if(serialInput == 'r')
 		{
-			turn_clockwise(sensor_data, 45);
+			while(seralInput != 'r')
+			{
+				seralInput = USART_Recieve();
+			}
+			
+			int tempDegrees = ((int) serialInput - 48) * 10;
+			turn_clockwise(sensor_data, tempDegrees);
 		}
 		
 		if(serialInput == 'l')
 		{
-			turn_counterclockwise(sensor_data, 45);
+			while(seralInput != 'r')
+			{
+				seralInput = USART_Recieve();
+			}
+			
+			int tempDegrees = ((int) serialInput - 48) * 10;
+			turn_clockwise(sensor_data, tempDegrees);
 		}
 		// USART_SendString("Small Scan Complete");
+		
 		
 		if(serialInput == 'Q')
 		{
