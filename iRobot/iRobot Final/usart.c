@@ -5,7 +5,7 @@
 
 void serial_init(void) {
 
-	unsigned long baud = 57600;
+	unsigned long baud = 38400;
 
 	// WAS 51
 	baud = (F_CPU/8/baud)-1;
@@ -53,16 +53,19 @@ unsigned char USART_Receive(void)
 	}
 }
 
-char* USART_RecieveString(int count)
+char* USART_RecieveString()
 {
+	int count = 0;
 	
 	//String to return
-	char receivedVars[9];
+	char receivedVars[5];
 			
 	//iterate through to get string		
-	for(int i = 0; i < count; i++)
+	while(1)
 	{
-		receivedVars[i] = USART_Receive();
+		receivedVars[count] = USART_Receive();
+		if(receivedVars[count] != '/0') break;
+		count ++;
 	}
 	
 	//return string

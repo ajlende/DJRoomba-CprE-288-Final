@@ -421,7 +421,7 @@ void turn_clockwise(oi_t *sensor, int degrees)
 		
 		sprintf(outputString, "Turned %f degrees clockwise", degrees);
 		
-		USART_SendString(outputString);
+		//USART_SendString(outputString);
 
 	}
 	oi_set_wheels(0, 0); // stop
@@ -438,7 +438,7 @@ void turn_counterclockwise(oi_t *sensor, int degrees)
 		
 		sprintf(outputString, "Turned %f degrees counterclockwise", degrees);
 		
-		USART_SendString(outputString);
+		//USART_SendString(outputString);
 
 	}
 	oi_set_wheels(0, 0); // stop

@@ -50,6 +50,8 @@ int main(void)
 	int count = 0;
 	char* numRecieved;
 	
+	char echoString[20];
+	
 	servo_turn(degrees);
 	
 	char OutputString[100];
@@ -60,12 +62,12 @@ int main(void)
 	//USART_SendString(OutputString);
 	while(1)
 	{
-		count = (int) USART_Receive() - 48;
 		
-		serialInput = USART_Receive();
+		//numRecieved = USART_RecieveString(count);
+		//USART_SendString(numRecieved);
 		
-		numRecieved = USART_RecieveString(count);
-		
+		serialInput = USART_Receive();	
+		//USART_SendString(serialInput);
 			
 		//Big Scan
 		if(serialInput == 'S')
@@ -140,21 +142,21 @@ int main(void)
 		if(serialInput == 'f')
 		{
 						
-			int tempDistance = atoi(numRecieved);
+			//int tempDistance = atoi(numRecieved);
 			
-			move_forward(sensor_data, tempDistance);
+			move_forward(sensor_data, 100);
 		}
 		
 		if(serialInput == 'r')
 		{
-			int tempDegrees = atoi(numRecieved);
-			turn_clockwise(sensor_data, tempDegrees);
+			//int tempDegrees = atoi(numRecieved);
+			turn_clockwise(sensor_data, 45);
 		}
 		
 		if(serialInput == 'l')
 		{
-			int tempDegrees = atoi(numRecieved);
-			turn_clockwise(sensor_data, tempDegrees);
+			//int tempDegrees = atoi(numRecieved);
+			turn_counterclockwise(sensor_data, 45);
 		}
 		// USART_SendString("Small Scan Complete");
 		
