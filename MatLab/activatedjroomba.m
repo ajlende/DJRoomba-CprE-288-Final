@@ -29,7 +29,7 @@ function varargout = activatedjroomba(varargin)
 
 % Edit the above text to modify the response to help activatedjroomba
 
-% Last Modified by GUIDE v2.5 24-Apr-2014 17:11:44
+% Last Modified by GUIDE v2.5 28-Apr-2014 20:19:23
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -49,8 +49,7 @@ else
     gui_mainfcn(gui_State, varargin{:});
 end
 % End initialization code - DO NOT EDIT
-
-
+end
 % --- Executes just before activatedjroomba is made visible.
 function activatedjroomba_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
@@ -61,12 +60,15 @@ function activatedjroomba_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for activatedjroomba
 handles.output = hObject;
-
+handles.port = 0;
 % Update handles structure
 guidata(hObject, handles);
 
+
 % UIWAIT makes activatedjroomba wait for user response (see UIRESUME)
-% uiwait(handles.figure1);
+% uiwait(handles.mainwindow);
+end
+
 
 
 % --- Outputs from this function are returned to the command line.
@@ -77,7 +79,9 @@ function varargout = activatedjroomba_OutputFcn(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Get default command line output from handles structure
-varargout{1} = handles.output;
+varargout{1} = getappdata(hObject,'output');
+
+end
 
 
 % --- Executes on button press in foreward.
@@ -85,27 +89,26 @@ function foreward_Callback(hObject, eventdata, handles)
 % hObject    handle to foreward (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+movement('forward',handles.port)
+end
 
 % --- Executes on button press in smallscan.
 function smallscan_Callback(hObject, eventdata, handles)
 % hObject    handle to smallscan (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+%port = getappdata(hObject,'port');
+smallscan(handles.port)
+end
 
 % --- Executes on button press in bigscan.
 function bigscan_Callback(hObject, eventdata, handles)
 % hObject    handle to bigscan (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+bigscan(handles.port)
+end
 
-
-% --- Executes on button press in backward.
-function backward_Callback(hObject, eventdata, handles)
-% hObject    handle to backward (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
 
 % --- Executes on button press in turnleft.
@@ -113,39 +116,38 @@ function turnleft_Callback(hObject, eventdata, handles)
 % hObject    handle to turnleft (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+movement('left',handle.port)
+end
 
 % --- Executes on button press in turnright.
 function turnright_Callback(hObject, eventdata, handles)
 % hObject    handle to turnright (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+movement('right',handles.port)
+end
 
-
-% --- If Enable == 'on', executes on mouse press in 5 pixel border.
-% --- Otherwise, executes on mouse press in 5 pixel border or over smallscan.
-function smallscan_ButtonDownFcn(hObject, eventdata, handles)
-% hObject    handle to smallscan (see GCBO)
+% --------------------------------------------------------------------
+function hobject = openbluetooth_Callback(hObject, eventdata, handles)
+% hObject    handle to openbluetooth (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+handles.port = serialinitv2(57600);
+guidata(hObject,handles)
+end
 
-% --- Executes on button press in serialinit.
-function serialinit_Callback(hObject, eventdata, handles)
-% hObject    handle to serialinit (see GCBO)
+% --------------------------------------------------------------------
+function openserial_Callback(hObject, eventdata, handles)
+% hObject    handle to openserial (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-
-% --- Executes on button press in serialclose.
-function serialclose_Callback(hObject, eventdata, handles)
-% hObject    handle to serialclose (see GCBO)
+end
+% --------------------------------------------------------------------
+function closeall_Callback(hObject, eventdata, handles)
+% hObject    handle to closeall (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-
-% --- Executes on button press in pushbutton9.
-function pushbutton9_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton9 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+end
