@@ -116,7 +116,7 @@ function turnleft_Callback(hObject, eventdata, handles)
 % hObject    handle to turnleft (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-movement('left',handle.port)
+movement('left',handles.port)
 end
 
 % --- Executes on button press in turnright.
@@ -142,7 +142,8 @@ function openserial_Callback(hObject, eventdata, handles)
 % hObject    handle to openserial (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+handles.port = serialinitv2(38400);
+guidata(hObject,handles)
 end
 % --------------------------------------------------------------------
 function closeall_Callback(hObject, eventdata, handles)
