@@ -20,7 +20,8 @@ void timer2_stop();
 
 // Times recorded from ISR(TIMER1_CAPT_vect) and the flag used with is
 volatile unsigned current_time = 0;
-volatile int update_flag = 0;
+volatile int update_flag = 0;
+
 // Initialize the IR distance sensor
 void ADC_init(void) {
 	// Enable ADC
@@ -211,8 +212,14 @@ float ping_read(void)
 	TCCR1B = 0b11000100;
 	
 	// Set time equal to difference in Trising and Tfalling
-	time = current_time-time;		// Timer/Counter 1 Input Capture Enable (bit 5)
-	TIMSK = 0b00000000;		//lprintf("Time: %d",time);		// Calculate the width of the pulse; convert to centimeters
+	time = current_time-time;
+	
+	// Timer/Counter 1 Input Capture Enable (bit 5)
+	TIMSK = 0b00000000;
+	
+	//lprintf("Time: %d",time);
+	
+	// Calculate the width of the pulse; convert to centimeters
 	return time2dist(time);
 	
 }
@@ -411,6 +418,10 @@ void turn_clockwise(oi_t *sensor, int degrees)
 	while (sum < degrees-12) {
 		oi_update(sensor);
 		sum -= sensor->angle;
+		
+		sprintf(outputString, "Turned %f degrees clockwise", degrees);
+		
+		USART_SendString(outputString);
 
 	}
 	oi_set_wheels(0, 0); // stop
@@ -424,6 +435,10 @@ void turn_counterclockwise(oi_t *sensor, int degrees)
 	while (sum < degrees-12) {
 		oi_update(sensor);
 		sum += sensor->angle; //maybe
+		
+		sprintf(outputString, "Turned %f degrees counterclockwise", degrees);
+		
+		USART_SendString(outputString);
 
 	}
 	oi_set_wheels(0, 0); // stop

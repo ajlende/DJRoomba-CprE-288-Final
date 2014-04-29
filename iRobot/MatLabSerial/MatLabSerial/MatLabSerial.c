@@ -13,6 +13,8 @@
 #include "usart.h"
 #include "open_interface.h"
 #include <math.h>
+#include<stdio.h>
+#include<stdlib.h>
 
 typedef struct object_s {
 	int degrees_start;
@@ -44,24 +46,30 @@ int main(void)
 	float PingDistance = 0;
 	unsigned int raw = 0;
 	int i = 0;
-	char serialInput = 0;
+	char serialInput;
+	int count = 0;
+	char* numRecieved;
 	
 	servo_turn(degrees);
 	
 	char OutputString[100];
+ 
 	
 	//sprintf(OutputString, "%s%1s%1s", "Degrees", "IR Distance (cm)", "Sonar Distance (cm)");
 	
 	//USART_SendString(OutputString);
 	while(1)
 	{
+		count = (int) USART_Receive() - 48;
 		
-		serialInput = USART_Receive();
-	
+		serialInput = USART_Recieve();
+		
+		numRecieved = USART_RecieveString(count);
+		
+			
 		//Big Scan
 		if(serialInput == 'S')
 		{
-			lprintf("Big Scan\n");
 			while(degrees <= 180) {
 		
 				// Average IR distances for a more stable measurement
@@ -96,7 +104,6 @@ int main(void)
 		//Small Scan
 		if(serialInput == 's')
 		{
-			lprintf("Small Scan\n");
 			degrees = 45;
 			servo_turn(degrees);
 			while(degrees <= 135) {
@@ -132,26 +139,28 @@ int main(void)
 		
 		if(serialInput == 'f')
 		{
-			lprintf("Moving Forward\n");
-			move_forward(sensor_data, 20);
+						
+			int tempDistance = atoi(numRecieved);
+			
+			move_forward(sensor_data, tempDistance);
 		}
 		
 		if(serialInput == 'r')
 		{
-			lprintf("Rotating Right\n");
-			turn_clockwise(sensor_data, 45);
+			int tempDegrees = atoi(numRecieved);
+			turn_clockwise(sensor_data, tempDegrees);
 		}
 		
 		if(serialInput == 'l')
 		{
-			lprintf("Rotating Left\n");
-			turn_counterclockwise(sensor_data, 45);
+			int tempDegrees = atoi(numRecieved);
+			turn_clockwise(sensor_data, tempDegrees);
 		}
 		// USART_SendString("Small Scan Complete");
 		
+		
 		if(serialInput == 'Q')
 		{
-			lprintf("Quitting...\n");
 			oi_free(sensor_data);
 			return;
 		}
