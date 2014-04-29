@@ -13,6 +13,8 @@
 #include "usart.h"
 #include "open_interface.h"
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct object_s {
 	int degrees_start;
@@ -44,24 +46,27 @@ int main(void)
 	float PingDistance = 0;
 	unsigned int raw = 0;
 	int i = 0;
-	char serialInput = 0;
+	char serialInput;
+	int count = 0;
+	char* numRecieved;
 	
 	servo_turn(degrees);
 	
 	char OutputString[100];
-	
-	char receivedVars[9];
+ 
 	
 	//sprintf(OutputString, "%s%1s%1s", "Degrees", "IR Distance (cm)", "Sonar Distance (cm)");
 	
 	//USART_SendString(OutputString);
 	while(1)
 	{
+		count = (int) USART_Receive() - 48;
 		
 		serialInput = USART_Receive();
-	
-	
 		
+		numRecieved = USART_RecieveString(count);
+		
+			
 		//Big Scan
 		if(serialInput == 'S')
 		{
@@ -134,36 +139,21 @@ int main(void)
 		
 		if(serialInput == 'f')
 		{
-			while(seralInput == 'f')
-			{
-				seralInput = USART_Recieve();
-			}
-			
-			int tempDistance = ((int) serialInput - 48) * 10;
-			
+						
+			int tempDistance = atoi(numRecieved);
 			
 			move_forward(sensor_data, tempDistance);
 		}
 		
 		if(serialInput == 'r')
 		{
-			while(seralInput != 'r')
-			{
-				seralInput = USART_Recieve();
-			}
-			
-			int tempDegrees = ((int) serialInput - 48) * 10;
+			int tempDegrees = atoi(numRecieved);
 			turn_clockwise(sensor_data, tempDegrees);
 		}
 		
 		if(serialInput == 'l')
 		{
-			while(seralInput != 'r')
-			{
-				seralInput = USART_Recieve();
-			}
-			
-			int tempDegrees = ((int) serialInput - 48) * 10;
+			int tempDegrees = atoi(numRecieved);
 			turn_clockwise(sensor_data, tempDegrees);
 		}
 		// USART_SendString("Small Scan Complete");
