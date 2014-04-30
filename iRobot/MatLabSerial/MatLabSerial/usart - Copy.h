@@ -6,6 +6,4 @@ unsigned char USART_Receive(void);
 
 void USART_SendString(char SentString[]);
 
-char* USART_RecieveString();
-
-void USART_Flush( void );
+char* USART_RecieveString(int count);

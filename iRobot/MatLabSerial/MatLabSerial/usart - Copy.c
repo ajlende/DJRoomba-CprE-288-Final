@@ -3,11 +3,9 @@
 
 #define F_CPU 16000000
 
-#define BAUD 57600
-
 void serial_init(void) {
 
-	unsigned long baud = BAUD;
+	unsigned long baud = 57600;
 
 	// WAS 51
 	baud = (F_CPU/8/baud)-1;
@@ -55,19 +53,16 @@ unsigned char USART_Receive(void)
 	}
 }
 
-char* USART_RecieveString()
+char* USART_RecieveString(int count)
 {
-	int count = 0;
 	
 	//String to return
-	char receivedVars[5];
+	char receivedVars[9];
 			
 	//iterate through to get string		
-	while(1)
+	for(int i = 0; i < count; i++)
 	{
-		receivedVars[count] = USART_Receive();
-		if(receivedVars[count] != '/0') break;
-		count ++;
+		receivedVars[i] = USART_Receive();
 	}
 	
 	//return string
@@ -95,13 +90,4 @@ void USART_SendString(char SentString[])
 		i++;
 	}
 	
-}
-
-void USART_Flush( void )
-{
-	unsigned char dummy;
-	while ( UCSR0A & (1<<RXC) )
-	{
-		dummy = UDR0;
-	}
 }

@@ -63,12 +63,19 @@ int main(void)
 	while(1)
 	{
 		
+		/*wait_ms(500);
+		oi_update(sensor_data);
+		lprintf("Left: %d\nRight: %d", sensor_data->cliff_frontleft_signal, sensor_data->cliff_frontright_signal);
+		*/
 		//numRecieved = USART_RecieveString(count);
 		//USART_SendString(numRecieved);
 		
-		serialInput = USART_Receive();	
-		//USART_SendString(serialInput);
-			
+		serialInput = USART_Receive();
+		
+		//if (serialInput) {
+		//	USART_SendString(serialInput);
+		//}
+		
 		//Big Scan
 		if(serialInput == 'S')
 		{
@@ -143,24 +150,50 @@ int main(void)
 		{
 						
 			//int tempDistance = atoi(numRecieved);
-			
-			move_forward(sensor_data, 100);
+			char nextletter = 0;
+			while(nextletter == 0)
+				nextletter = USART_Receive();
+			int actualnumber = (((int) nextletter)-48) * 10;
+			move_forward(sensor_data, 50);
 		}
 		
 		if(serialInput == 'r')
 		{
 			//int tempDegrees = atoi(numRecieved);
-			turn_clockwise(sensor_data, 45);
+			
+			char nextletter = 0;
+			while(nextletter == 0)
+				nextletter = USART_Receive();
+			int actualnumber = (((int) nextletter)-48) * 10;
+			// llprintf("actual %d\n", actualnumber);
+			turn_clockwise(sensor_data, actualnumber);
 		}
 		
 		if(serialInput == 'l')
 		{
 			//int tempDegrees = atoi(numRecieved);
-			turn_counterclockwise(sensor_data, 45);
+			char nextletter = 0;
+			while(nextletter == 0)
+				nextletter = USART_Receive();
+			int actualnumber = (((int) nextletter)-48) * 10;
+			turn_counterclockwise(sensor_data, actualnumber);
 		}
 		// USART_SendString("Small Scan Complete");
 		
+		if(serialInput == 'c' || serialInput == '!') {
+			USART_Flush();
+			lprintf("Flushed!\n");
+		}
 		
+		if(serialInput == 'b')
+		{
+			move_backward(sensor_data, 5);
+		}
+				
+		if(serialInput == 'd')
+		{
+			void reportData(sensor_data);
+		}
 		if(serialInput == 'Q')
 		{
 			oi_free(sensor_data);

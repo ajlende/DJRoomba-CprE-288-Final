@@ -342,15 +342,15 @@ char move_forward(oi_t *sensor, int centimeters)
 {
 	int sum = 0;
 	int dist = 0;
+	int new_dist = 0;
 	char outputString[20];
-	lprintf("Debug 1\n");
 	oi_set_wheels(150, 150); // move forward
-	lprintf("Debug 2\n");
+
 	while (sum < centimeters*10)
 	{
 		oi_update(sensor);
 		sum += sensor->distance;
-		lprintf("%d\n", sum);
+
 		if(sensor->bumper_left)
 		{
 			oi_set_wheels(0, 0); // stop
@@ -371,66 +371,30 @@ char move_forward(oi_t *sensor, int centimeters)
 			USART_SendString("Right Bumper Triggered");
 			return 2;
 		}
-		
-		if((sensor->cliff_frontleft_signal > 800) || (sensor->cliff_frontright_signal > 800))
+		if((sensor->cliff_frontleft_signal > 550) || (sensor->cliff_frontright_signal > 450))
 		{
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
 			USART_SendString("Line Detected");
 			return 3;
 		}
-		else if((sensor->wheeldrop_caster == 1) || (sensor->wheeldrop_left == 1) || (sensor->wheeldrop_right == 1))
+		else if((sensor->wheeldrop_caster == 1) || (sensor->wheeldrop_left == 1) || (sensor->wheeldrop_right == 1) || (sensor->cliff_frontleft_signal < 10) || (sensor->cliff_frontright_signal < 10)|| (sensor->cliff_left_signal < 10) || (sensor->cliff_right_signal < 10))
 		{
-			char sensorData[20];
-			sprintf(sensorData, "Cliff Edge Detected: Right Sensor: %d Front Right: %d Front Left%d Left: %d", (int) sensor->cliff_frontright_signal, (int) sensor->cliff_frontright_signal, (int) sensor->cliff_frontleft_signal, (int) sensor->cliff_frontleft_signal);
-			USART_SendString(sensorData);
 			lprintf("Cliff Edge Detected");
-			// move_backward(sensor,10);
-			oi_set_wheels(0,0);
+			move_backward(sensor,10);
+
+			USART_SendString("Cliff Edge Detected");
 			return 4;
 		}
-		
-		else if (sensor->cliff_frontleft_signal < 10) 
-		{
-			char sensorData[20];
-			sprintf(sensorData, "Cliff Edge Detected: Front Left | distance moved: %d cm", sum / 10);
-			USART_SendString(sensorData);
-			oi_set_wheels(0,0);
-			return 5;
-		}
-		else if (sensor->cliff_frontright_signal < 10)
-		{
-			char sensorData[20];
-			sprintf(sensorData, "Cliff Edge Detected: Front Right | distance moved: %d cm", sum / 10);
-			USART_SendString(sensorData);
-			oi_set_wheels(0,0);
-			return 6;
-		}
-		else if (sensor->cliff_left_signal < 10) 
-		{
-			char sensorData[20];
-			sprintf(sensorData, "Cliff Edge Detected: Left | distance moved: %d cm", sum / 10);		
-			USART_SendString(sensorData);	
-			oi_set_wheels(0,0);
-			return 7;
-		}
-		else if (sensor->cliff_right_signal < 10)
-		{
-			char sensorData[20];
-			sprintf(sensorData, "Cliff Edge Detected: Right | distance moved: %d cm", sum / 10);
-			USART_SendString(sensorData);		
-			oi_set_wheels(0,0);	
-			return 8;
-		}
+		return 0;
 	}
 
 	oi_set_wheels(0, 0); // stop
 	
-	sprintf(outputString, "Moved %d centimeters", sum);
+	sprintf(outputString, "Moved %f centimeters", sum);
 	
 	USART_SendString(outputString);
 
-	return 0;
 }
 
 
@@ -442,25 +406,25 @@ void move_backward(oi_t *sensor, int centimeters)
 		oi_update(sensor);
 		sum -= sensor->distance;
 	}
-	
-	oi_set_wheels(0, 0); // stop	
-	reportData(sensor);
+
+	oi_set_wheels(0, 0); // stop
 }
 
 void turn_clockwise(oi_t *sensor, int degrees)
 {
 	int sum = 0;
 	char outputString[20];
-	oi_set_wheels(-150, 150);
+
+	oi_set_wheels(-200, 200);
 	while (sum < degrees-12) {
 		oi_update(sensor);
 		sum -= sensor->angle;
+		
+		sprintf(outputString, "Turned %f degrees clockwise", degrees);
+		
+		USART_SendString(outputString);
+
 	}
-	
-	// sprintf(outputString, "Turned %d degrees clockwise", degrees);
-	
-	// USART_SendString(outputString);
-	
 	oi_set_wheels(0, 0); // stop
 }
 
@@ -468,26 +432,16 @@ void turn_counterclockwise(oi_t *sensor, int degrees)
 {
 	int sum = 0;
 	char outputString[20];
-	oi_set_wheels(150, -150);
+
+	oi_set_wheels(200, -200);
 	while (sum < degrees-12) {
 		oi_update(sensor);
 		sum += sensor->angle; //maybe
 		
-		// sprintf(outputString, "Turned %f degrees counterclockwise", degrees);
+		sprintf(outputString, "Turned %f degrees counterclockwise", degrees);
 		
-		//USART_SendString(outputString);
+		USART_SendString(outputString);
 
 	}
 	oi_set_wheels(0, 0); // stop
 }
-
-void reportData(oi_t *sensor)
-{
-	char senDat[50];
-	oi_update(sensor);
-	
-	sprintf(senDat, "Cliff Left: %d | Cliff FrontLeft: %d | Cliff FrontRight: %d | Cliff Right: %d | Wheel Drop Left: %d | Wheel Drop Middle: %d | Wheel Drop Left: %d", sensor->cliff_left_signal, sensor->cliff_frontleft_signal, sensor->cliff_frontright_signal, sensor->cliff_right_signal,sensor->wheeldrop_left, sensor->wheeldrop_caster, sensor->wheeldrop_right);
-	USART_SendString(senDat);
-
-}
-

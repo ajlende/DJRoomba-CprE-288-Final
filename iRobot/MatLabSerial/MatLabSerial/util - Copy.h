@@ -58,6 +58,3 @@ void turn_counterclockwise(oi_t *sensor, int degrees);
 
 void turn_clockwise(oi_t *sensor, int degrees);
 
-
-
-void reportData(oi_t *sensor);
