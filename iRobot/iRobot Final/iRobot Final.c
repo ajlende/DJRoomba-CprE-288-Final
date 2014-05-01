@@ -38,6 +38,8 @@ int main(void)
 	
 	timer3_init(); // Initialize the servo motor
 	
+	song_init();
+	
 	oi_t *sensor_data = oi_alloc();
 	oi_init(sensor_data); // should turn the iRobot Create's power LED yellow
 	
@@ -56,13 +58,16 @@ int main(void)
 	
 	char OutputString[100];
  
+	song_init();
+	oi_byte_tx(141);
+	oi_byte_tx(1);
 	
 	//sprintf(OutputString, "%s%1s%1s", "Degrees", "IR Distance (cm)", "Sonar Distance (cm)");
 	
 	//USART_SendString(OutputString);
 	while(1)
 	{
-		
+	
 		/*wait_ms(500);
 		oi_update(sensor_data);
 		lprintf("Left: %d\nRight: %d", sensor_data->cliff_frontleft_signal, sensor_data->cliff_frontright_signal);
@@ -154,29 +159,36 @@ int main(void)
 			while(nextletter == 0)
 				nextletter = USART_Receive();
 			int actualnumber = (((int) nextletter)-48) * 10;
-			move_forward(sensor_data, 50);
+			move_forward(sensor_data, actualnumber);
 		}
 		
 		if(serialInput == 'r')
 		{
 			//int tempDegrees = atoi(numRecieved);
-			
+			char turnMessage[40];			
 			char nextletter = 0;
 			while(nextletter == 0)
 				nextletter = USART_Receive();
-			int actualnumber = (((int) nextletter)-48) * 10;
-			// llprintf("actual %d\n", actualnumber);
+			int actualnumber = (((int) nextletter)-47) * 10;
+			//lprintf("actual %d\n", actualnumber);
 			turn_clockwise(sensor_data, actualnumber);
+			actualnumber -= 10;
+			sprintf(turnMessage,"Turned right %d degrees", actualnumber);
+			USART_SendString(turnMessage);
 		}
 		
 		if(serialInput == 'l')
 		{
 			//int tempDegrees = atoi(numRecieved);
+			char turnMessage[40];	
 			char nextletter = 0;
 			while(nextletter == 0)
 				nextletter = USART_Receive();
-			int actualnumber = (((int) nextletter)-48) * 10;
+			int actualnumber = (((int) nextletter)-47) * 10;
 			turn_counterclockwise(sensor_data, actualnumber);
+			actualnumber -= 10;
+			sprintf(turnMessage,"Turned left %d degrees", actualnumber);
+			USART_SendString(turnMessage);			
 		}
 		// USART_SendString("Small Scan Complete");
 		
