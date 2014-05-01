@@ -83,13 +83,132 @@ void wait_ms(unsigned int time_val) {
 
 void song_init()
 {
-	oi_byte_tx(140);	//song function
-	oi_byte_tx(1);		//song number
-	oi_byte_tx(2);		//number notes in song
-	oi_byte_tx(55);		//song note
-	oi_byte_tx(64);		//one second length
-	oi_byte_tx(58);		//song note
-	oi_byte_tx(64);		//second note length
+
+
+oi_byte_tx(140);
+oi_byte_tx(1);
+oi_byte_tx(24);
+oi_byte_tx(67);
+oi_byte_tx(16);
+oi_byte_tx(67);
+oi_byte_tx(16);
+oi_byte_tx(63);
+oi_byte_tx(16);
+oi_byte_tx(60);
+oi_byte_tx(32);
+oi_byte_tx(60);
+oi_byte_tx(32);
+oi_byte_tx(65);
+oi_byte_tx(32);
+oi_byte_tx(65);
+oi_byte_tx(32);
+oi_byte_tx(65);
+oi_byte_tx(16);
+oi_byte_tx(69);
+oi_byte_tx(16);
+oi_byte_tx(69);
+oi_byte_tx(16);
+oi_byte_tx(70);
+oi_byte_tx(16);
+oi_byte_tx(72);
+oi_byte_tx(16);
+oi_byte_tx(70);
+oi_byte_tx(16);
+oi_byte_tx(70);
+oi_byte_tx(16);
+oi_byte_tx(65);
+oi_byte_tx(16);
+oi_byte_tx(62);
+oi_byte_tx(32);
+oi_byte_tx(62);
+oi_byte_tx(32);
+oi_byte_tx(67);
+oi_byte_tx(32);
+oi_byte_tx(67);
+oi_byte_tx(32);
+oi_byte_tx(67);
+oi_byte_tx(16);
+oi_byte_tx(65);
+oi_byte_tx(16);
+oi_byte_tx(65);
+oi_byte_tx(16);
+oi_byte_tx(67);
+oi_byte_tx(16);
+oi_byte_tx(65);
+oi_byte_tx(16);
+
+
+/*
+oi_byte_tx(140);
+oi_byte_tx(0);
+oi_byte_tx(33);
+oi_byte_tx(55);
+oi_byte_tx(32);
+oi_byte_tx(57);
+oi_byte_tx(32);
+oi_byte_tx(55);
+oi_byte_tx(32);
+oi_byte_tx(57);
+oi_byte_tx(32);
+oi_byte_tx(55);
+oi_byte_tx(48);
+oi_byte_tx(57);
+oi_byte_tx(16);
+oi_byte_tx(55);
+oi_byte_tx(32);
+oi_byte_tx(57);
+oi_byte_tx(32);
+oi_byte_tx(58);
+oi_byte_tx(32);
+oi_byte_tx(60);
+oi_byte_tx(32);
+oi_byte_tx(58);
+oi_byte_tx(32);
+oi_byte_tx(60);
+oi_byte_tx(32);
+oi_byte_tx(58);
+oi_byte_tx(48);
+oi_byte_tx(60);
+oi_byte_tx(16);
+oi_byte_tx(58);
+oi_byte_tx(32);
+oi_byte_tx(60);
+oi_byte_tx(32);
+oi_byte_tx(63);
+oi_byte_tx(32);
+oi_byte_tx(65);
+oi_byte_tx(32);
+oi_byte_tx(63);
+oi_byte_tx(32);
+oi_byte_tx(65);
+oi_byte_tx(32);
+oi_byte_tx(63);
+oi_byte_tx(48);
+oi_byte_tx(65);
+oi_byte_tx(16);
+oi_byte_tx(63);
+oi_byte_tx(32);
+oi_byte_tx(65);
+oi_byte_tx(32);
+oi_byte_tx(60);
+oi_byte_tx(16);
+oi_byte_tx(60);
+oi_byte_tx(16);
+oi_byte_tx(60);
+oi_byte_tx(16);
+oi_byte_tx(60);
+oi_byte_tx(16);
+oi_byte_tx(58);
+oi_byte_tx(32);
+oi_byte_tx(60);
+oi_byte_tx(64);
+oi_byte_tx(48);
+oi_byte_tx(16);
+oi_byte_tx(48);
+oi_byte_tx(16);
+oi_byte_tx(48);
+oi_byte_tx(16);
+*/
 }
 
 // Start timer2
@@ -276,6 +395,9 @@ void servo_turn(int degrees)
 	// For robot #4
 	unsigned int pulse_width = (0.00944 * ((float) degrees) + 0.49) * 250; // pulse width in cycles
 	
+	//For Robot #7
+	//unsigned int pulse_width = (0.00920 * ((float) degrees) + 0.46) * 250;
+	
 	// calculate pulse width in cycles
 	OCR3B = pulse_width-1; // set pulse width
 	// you need to call wait_ms() here to enforce a delay for the servo to
@@ -295,7 +417,7 @@ void timer3_init(void)
 	
 	// On robot #3
 	// 90 degrees ~ 0.865
-	// unsigned int mid_point = clk_cycles_per_ms*1.505;
+	 //unsigned int mid_point = clk_cycles_per_ms*1.505;
 	// 2.37ms ~ 180deg
 	// 0.64ms ~ 0deg
 	
@@ -497,7 +619,7 @@ void move_backward(oi_t *sensor, int centimeters)
 	}
 	
 	oi_set_wheels(0, 0); // stop	
-	reportData(sensor);
+	//reportData(sensor);
 }
 
 void turn_clockwise(oi_t *sensor, int degrees)
@@ -506,57 +628,6 @@ void turn_clockwise(oi_t *sensor, int degrees)
 	char outputString[20];
 	oi_set_wheels(-150, 150);
 	
-	if(degrees == 30)
-	{
-		while (sum < degrees-10) {
-			oi_update(sensor);
-			sum -= sensor->angle;
-		
-		if((sensor->cliff_frontleft_signal > 800))
-		{
-			char sensorData[60];
-			lprintf("Line Detected");
-			oi_set_wheels(0,0);
-			sprintf(sensorData, "Front Left Sensor Line Detected | degrees moved: %d", sum);
-			USART_SendString(sensorData);
-			return 3;
-		}
-		
-		else if((sensor->cliff_frontright_signal > 800))
-		{
-			char sensorData[60];
-			lprintf("Line Detected");
-			oi_set_wheels(0,0);
-			sprintf(sensorData, "Front Right Sensor Line Detected | degrees moved: %d", sum);
-			USART_SendString(sensorData);
-			return 3;
-		}
-
-		else if((sensor->cliff_right_signal > 800))
-		{
-			char sensorData[60];
-			lprintf("Line Detected");
-			oi_set_wheels(0,0);
-			sprintf(sensorData, "Right Sensor Line Detected | distance moved: %d", sum);
-			USART_SendString(sensorData);
-			return 3;
-		}
-
-		else if((sensor->cliff_left_signal > 800))
-		{
-			char sensorData[60];
-			lprintf("Line Detected");
-			oi_set_wheels(0,0);
-			sprintf(sensorData, "Left Sensor Line Detected | distance moved: %d", sum);
-			USART_SendString(sensorData);
-			return 3;
-		}
-		
-		}		
-	}
-	
-	else
-	{
 		while (sum < degrees-12) {
 			oi_update(sensor);
 			sum -= sensor->angle;
@@ -600,15 +671,17 @@ void turn_clockwise(oi_t *sensor, int degrees)
 			USART_SendString(sensorData);
 			return 3;
 		}
-
 		}
 	
-	}
 	// sprintf(outputString, "Turned %d degrees clockwise", degrees);
 	
 	// USART_SendString(outputString);
 	
 	oi_set_wheels(0, 0); // stop
+	char turnMessage[40];
+	degrees -= 10;
+	sprintf(turnMessage,"Turned right %d degrees", degrees);
+	USART_SendString(turnMessage);
 }
 
 void turn_counterclockwise(oi_t *sensor, int degrees)
@@ -617,11 +690,7 @@ void turn_counterclockwise(oi_t *sensor, int degrees)
 	char outputString[20];
 	oi_set_wheels(150, -150);
 	
-	//for degrees = 30
-	if(degrees == 30)
-	{
-		
-	while (sum < degrees-10) 
+	while (sum < degrees-12) 
 	{
 		oi_update(sensor);
 		sum += sensor->angle; 
@@ -666,9 +735,8 @@ void turn_counterclockwise(oi_t *sensor, int degrees)
 			return 3;
 		}
 	}
-	}
 	
-	else
+	/*else
 	{	
 		while (sum < degrees-10) 
 		{
@@ -711,16 +779,20 @@ void turn_counterclockwise(oi_t *sensor, int degrees)
 			oi_set_wheels(0,0);
 			sprintf(sensorData, "Left Sensor Line Detected | distance moved: %d", sum);
 			USART_SendString(sensorData);
-			return 3;
-		}
-		}
-	}
+			return 3;*/
+		//}
+		//}
+	
 	oi_set_wheels(0, 0); // stop
+	char turnMessage[40];
+	degrees -= 10;
+	sprintf(turnMessage,"Turned left %d degrees", degrees);
+	USART_SendString(turnMessage);
 }
 
 void reportData(oi_t *sensor)
 {
-	char senDat[50];
+	char senDat[100];
 	oi_update(sensor);
 	
 	sprintf(senDat, "Cliff Left: %d | Cliff FrontLeft: %d | Cliff FrontRight: %d | Cliff Right: %d | Wheel Drop Left: %d | Wheel Drop Middle: %d | Wheel Drop Left: %d", sensor->cliff_left_signal, sensor->cliff_frontleft_signal, sensor->cliff_frontright_signal, sensor->cliff_right_signal,sensor->wheeldrop_left, sensor->wheeldrop_caster, sensor->wheeldrop_right);

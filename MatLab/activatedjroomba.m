@@ -29,7 +29,7 @@ function varargout = activatedjroomba(varargin)
 
 % Edit the above text to modify the response to help activatedjroomba
 
-% Last Modified by GUIDE v2.5 01-May-2014 11:56:52
+% Last Modified by GUIDE v2.5 01-May-2014 15:20:24
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -63,7 +63,7 @@ function activatedjroomba_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
 handles.port = 0;
 handles.number = 0;
-handles.message = 0;
+handles.message = 'hi';
 handles.count = 1;
 
 % Update handles structure
@@ -94,7 +94,7 @@ try
     handles.port = serialinitv3('COM4',hObject,handles);
     guidata(hObject,handles)
 catch err
-    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
@@ -107,7 +107,7 @@ try
     handles.port = serialinitv3('COM1',hObject,handles);
     guidata(hObject,handles)
 catch err
-    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
@@ -127,11 +127,12 @@ function smallscan_Callback(hObject, eventdata, handles)
 %port = getappdata(hObject,'port');
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable)
+    display('flushed')
 end
 try
     smallscan(handles.port)
 catch err
-    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
@@ -146,7 +147,7 @@ end
 try
     bigscan(handles.port)
 catch err
-    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
@@ -162,8 +163,10 @@ end
 try
     fwrite(handles.port,'l')
     fwrite(handles.port,handles.number)
+    str = fscanf(handles.port);
+    appendeditbox(str,handles,hObject)
 catch err
-    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
@@ -179,8 +182,10 @@ end
 try
     fwrite(handles.port,'r')
     fwrite(handles.port,handles.number)
+    str = fscanf(handles.port);
+    appendeditbox(str,handles,hObject)
 catch err
-    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
@@ -196,10 +201,10 @@ end
 try
     fwrite(handles.port,'f')
     fwrite(handles.port,handles.number)
-    str = fscanf(port);
+    str = fscanf(handles.port);
     appendeditbox(str,handles,hObject);
 catch err
-    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
@@ -215,7 +220,7 @@ end
 try
     fwrite(handles.port,'b')
 catch err
-    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
@@ -232,7 +237,7 @@ try
         appendeditbox('Buffer is empty.',handles,hObject);
     end
 catch err
-    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
@@ -245,11 +250,11 @@ if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable)
 end
 try
-    fwrite(port, 'd')
-    str = fscanf(port);
+    fwrite(handles.port, 'd')
+    str = fscanf(handles.port);
     appendeditbox(str,handles,hObject);
 catch err
-    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
@@ -322,5 +327,21 @@ function clrmsg_Callback(hObject, eventdata, handles)
 % hObject    handle to clrmsg (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+handles.message = 'cleared';
+handles.count = 1;
+guidata(hObject,handles)
 set(handles.editmsg,'String','')
+end
+
+
+% --- Executes on button press in Song.
+function Song_Callback(hObject, eventdata, handles)
+% hObject    handle to Song (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+try
+    fwrite(handles.port, 'Q')
+catch err
+    appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
+end
 end

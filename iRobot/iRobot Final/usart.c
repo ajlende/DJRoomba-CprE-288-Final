@@ -3,7 +3,7 @@
 
 #define F_CPU 16000000
 
-#define BAUD 57600
+#define BAUD 38400
 
 void serial_init(void) {
 
@@ -58,6 +58,7 @@ unsigned char USART_Receive(void)
 char* USART_RecieveString()
 {
 	int count = 0;
+
 	
 	//String to return
 	char receivedVars[5];

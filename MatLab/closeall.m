@@ -5,6 +5,8 @@ function null = closeall()
         fclose(out);
     catch
         display('No connections to close.')
+        delete(out);
+        clear all
         return;
     end
     delete(out);
