@@ -151,6 +151,7 @@ function hobject = openbluetooth_Callback(hObject, eventdata, handles)
 
 handles.port = serialinitv2(57600);
 guidata(hObject,handles)
+
 end
 
 % --------------------------------------------------------------------

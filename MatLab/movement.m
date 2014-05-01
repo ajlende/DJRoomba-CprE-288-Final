@@ -13,11 +13,14 @@ if strcmp(input,'forward')
 elseif strcmp(input,'left')
         fwrite(port, 'l')
         fwrite(port, number)
+        message = fscanf(port)
         
 elseif strcmp(input,'right')
         fwrite(port,'r')
         fwrite(port,number)
+        message = fscanf(port)
         
 elseif strcmp(input,'back')
         fwrite(port, 'b')
+        message = fscanf(port)
 end
