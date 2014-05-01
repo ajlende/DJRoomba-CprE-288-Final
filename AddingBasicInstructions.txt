@@ -1,9 +1,0 @@
-ADDING, COMMITTING, PUSHING
-
-1)	update local files in branch with 'git fetch'
-
-2)	once in desired directory, 'git add [file name]' to add file.  only needed to be done once per file
-
-3)	'git commit -m [message]' to put file into staging area
-
-4)	'git push' pushes all files from staging area to server

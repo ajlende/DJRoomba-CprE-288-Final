@@ -53,6 +53,23 @@ unsigned char USART_Receive(void)
 	}
 }
 
+char* USART_RecieveString(int count)
+{
+	
+	//String to return
+	char receivedVars[9];
+			
+	//iterate through to get string		
+	for(int i = 0; i < count; i++)
+	{
+		receivedVars[i] = USART_Receive();
+	}
+	
+	//return string
+	return receivedVars;
+	
+}
+
 
 void USART_SendString(char SentString[])
 {

@@ -1,13 +1,13 @@
 %% 90 degree scan
 %Author: Benjamin Williams
 %Scans from 45 degrees to 135 degrees
-function null = smallscan(port)
+function smallscan(port)
 data = zeros(45,3);
 
 %Send the small scan seriaL command
 fwrite(port, 's');
 
-i = 0;
+% i = 0;
 
 for j=1:45
 %Read
@@ -39,4 +39,4 @@ polar(data(:,1), data(:,2),'.r'); hold on;
 polar(data(:,1), data(:,3),'.');
 hold off;
 drawnow;
-i = i +1;
+% i = i +1;
