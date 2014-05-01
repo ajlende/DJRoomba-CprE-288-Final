@@ -29,7 +29,7 @@ function varargout = activatedjroomba(varargin)
 
 % Edit the above text to modify the response to help activatedjroomba
 
-% Last Modified by GUIDE v2.5 29-Apr-2014 22:18:13
+% Last Modified by GUIDE v2.5 01-May-2014 11:56:52
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -50,6 +50,7 @@ else
 end
 % End initialization code - DO NOT EDIT
 end
+
 % --- Executes just before activatedjroomba is made visible.
 function activatedjroomba_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
@@ -62,15 +63,15 @@ function activatedjroomba_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
 handles.port = 0;
 handles.number = 0;
+handles.message = 0;
+handles.count = 1;
+
 % Update handles structure
 guidata(hObject, handles);
-
 
 % UIWAIT makes activatedjroomba wait for user response (see UIRESUME)
 % uiwait(handles.mainwindow);
 end
-
-
 
 % --- Outputs from this function are returned to the command line.
 function varargout = activatedjroomba_OutputFcn(hObject, eventdata, handles) 
@@ -84,16 +85,38 @@ varargout{1} = getappdata(hObject,'output');
 
 end
 
-
-% --- Executes on button press in foreward.
-function foreward_Callback(hObject, eventdata, handles)
-% hObject    handle to foreward (see GCBO)
+% --------------------------------------------------------------------
+function hobject = openbluetooth_Callback(hObject, eventdata, handles)
+% hObject    handle to openbluetooth (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-if (handles.port.BytesAvailable ~= 0)
-    fread(handles.port, handles.port.BytesAvailable)
+try
+    handles.port = serialinitv3('COM4',hObject,handles);
+    guidata(hObject,handles)
+catch err
+    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
 end
-movement('forward',handles.number,handles.port)
+end
+
+% --------------------------------------------------------------------
+function openserial_Callback(hObject, eventdata, handles)
+% hObject    handle to openserial (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+try
+    handles.port = serialinitv3('COM1',hObject,handles);
+    guidata(hObject,handles)
+catch err
+    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+end
+end
+
+% --------------------------------------------------------------------
+function closeall_Callback(hObject, eventdata, handles)
+% hObject    handle to closeall (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+closeall
 end
 
 % --- Executes on button press in smallscan.
@@ -105,7 +128,11 @@ function smallscan_Callback(hObject, eventdata, handles)
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable)
 end
-smallscan(handles.port)
+try
+    smallscan(handles.port)
+catch err
+    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+end
 end
 
 % --- Executes on button press in bigscan.
@@ -116,10 +143,12 @@ function bigscan_Callback(hObject, eventdata, handles)
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable)
 end
-bigscan(handles.port)
+try
+    bigscan(handles.port)
+catch err
+    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
 end
-
-
+end
 
 % --- Executes on button press in turnleft.
 function turnleft_Callback(hObject, eventdata, handles)
@@ -129,7 +158,13 @@ function turnleft_Callback(hObject, eventdata, handles)
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable)
 end
-movement('left',handles.number,handles.port)
+% movement('left',handles.number,handles.port)
+try
+    fwrite(handles.port,'l')
+    fwrite(handles.port,handles.number)
+catch err
+    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+end
 end
 
 % --- Executes on button press in turnright.
@@ -140,62 +175,85 @@ function turnright_Callback(hObject, eventdata, handles)
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable)
 end
-movement('right',handles.number,handles.port)
+% movement('right',handles.number,handles.port)
+try
+    fwrite(handles.port,'r')
+    fwrite(handles.port,handles.number)
+catch err
+    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+end
 end
 
-% --------------------------------------------------------------------
-function hobject = openbluetooth_Callback(hObject, eventdata, handles)
-% hObject    handle to openbluetooth (see GCBO)
+% --- Executes on button press in foreward.
+function foreward_Callback(hObject, eventdata, handles)
+% hObject    handle to foreward (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-handles.port = serialinitv2(57600);
-guidata(hObject,handles)
-
+if (handles.port.BytesAvailable ~= 0)
+    fread(handles.port, handles.port.BytesAvailable);
+end
+% movement('forward',handles.number,handles.port)
+try
+    fwrite(handles.port,'f')
+    fwrite(handles.port,handles.number)
+    str = fscanf(port);
+    appendeditbox(str,handles,hObject);
+catch err
+    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+end
 end
 
-% --------------------------------------------------------------------
-function openserial_Callback(hObject, eventdata, handles)
-% hObject    handle to openserial (see GCBO)
+% --- Executes on button press in back.
+function back_Callback(hObject, eventdata, handles)
+% hObject    handle to back (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-handles.port = serialinitv2(38400);
-guidata(hObject,handles)
+if (handles.port.BytesAvailable ~= 0)
+    fread(handles.port, handles.port.BytesAvailable);
 end
-% --------------------------------------------------------------------
-function closeall_Callback(hObject, eventdata, handles)
-% hObject    handle to closeall (see GCBO)
+% movement('back',handles.number,handles.port);
+try
+    fwrite(handles.port,'b')
+catch err
+    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+end
+end
+
+% --- Executes on button press in flush.
+function flush_Callback(hObject, eventdata, handles)
+% hObject    handle to flush (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+try
+    fwrite(handles.port,'!')
+    if (handles.port.BytesAvailable ~= 0)
+        fread(handles.port, handles.port.BytesAvailable);
+    else
+        appendeditbox('Buffer is empty.',handles,hObject);
+    end
+catch err
+    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
+end
 end
 
-
-
-function messages_Callback(hObject, eventdata, handles)
-% hObject    handle to messages (see GCBO)
+% --- Executes on button press in reportdata.
+function reportdata_Callback(hObject, eventdata, handles)
+% hObject    handle to reportdata (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of messages as text
-%        str2double(get(hObject,'String')) returns contents of messages as a double
+if (handles.port.BytesAvailable ~= 0)
+    fread(handles.port, handles.port.BytesAvailable)
 end
-
-% --- Executes during object creation, after setting all properties.
-function messages_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to messages (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
+try
+    fwrite(port, 'd')
+    str = fscanf(port);
+    appendeditbox(str,handles,hObject);
+catch err
+    appendeditbox(getReport(err,'basic','hyperlinks','off'),handles,hObject);
 end
 end
 
-
-
+% --- Executes when number value is updated.
 function number_Callback(hObject, eventdata, handles)
 % hObject    handle to number (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -220,41 +278,49 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 end
 
-
-% --- Executes on button press in flush.
-function flush_Callback(hObject, eventdata, handles)
-% hObject    handle to flush (see GCBO)
+function editmsg_Callback(hObject, eventdata, handles)
+% hObject    handle to editmsg (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-fwrite(handles.port,'!')
-if (handles.port.BytesAvailable ~= 0)
-    fread(handles.port, handles.port.BytesAvailable)
-else
-    print ('Buffer is empty');
+% Hints: get(hObject,'String') returns contents of editmsg as text
+%        str2double(get(hObject,'String')) returns contents of editmsg as a double
+display('messages_Callback called')
+end
+
+% --- Executes during object creation, after setting all properties.
+function editmsg_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to editmsg (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
 end
 end
 
 
-% --- Executes on button press in back.
-function back_Callback(hObject, eventdata, handles)
-% hObject    handle to back (see GCBO)
+% --- Executes on button press in testmsg.
+function testmsg_Callback(hObject, eventdata, handles)
+% hObject    handle to testmsg (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-if (handles.port.BytesAvailable ~= 0)
-    fread(handles.port, handles.port.BytesAvailable)
-end
-movement('back',handles.number,handles.port);
+str = 'testmsg_Callback called';
+% display(str)
+% handles.message = sprintf(strcat(num2str(handles.count),':\t',str,'\n',handles.message));
+% handles.message = sprintf('%3d: %s\n%s',handles.count,str,handles.message);
+% handles.count = handles.count + 1;
+% guidata(hObject, handles);
+% set(handles.editmsg,'String',handles.message)
+appendeditbox(str,handles,hObject);
 end
 
-
-% --- Executes on button press in reportdata.
-function reportdata_Callback(hObject, eventdata, handles)
-% hObject    handle to reportdata (see GCBO)
+% --------------------------------------------------------------------
+function clrmsg_Callback(hObject, eventdata, handles)
+% hObject    handle to clrmsg (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-if (handles.port.BytesAvailable ~= 0)
-    fread(handles.port, handles.port.BytesAvailable)
-end
-fwrite(port, 'd')
+set(handles.editmsg,'String','')
 end
