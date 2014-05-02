@@ -227,6 +227,8 @@ try
     fwrite(handles.port,handles.number)
     while(handles.port.BytesAvailable == 0)
        %block until we see data 
+       start = clock;
+    TimeOut = 6;
     end
          display(fgets(handles.port));
     while(handles.port.BytesAvailable == 0)
@@ -288,16 +290,13 @@ if (handles.port.BytesAvailable ~= 0)
 end
 try
     fwrite(handles.port, 'd');
-    start = clock;
-    TimeOut = 6;
     while(handles.port.BytesAvailable == 0)
        %block until we see data 
-        if(etime(clock, start) > TimeOut)
-           break;
-       end
     end
     display(fgets(handles.port));
-    display(etime(clock, start));
+    if (handles.port.BytesAvailable ~= 0)
+        fread(handles.port, handles.port.BytesAvailable)
+    end
     %appendeditbox(str,handles,hObject);
 catch err
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
