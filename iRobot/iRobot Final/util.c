@@ -13,6 +13,10 @@
 #include "util.h"
 #include "lcd.h"
 
+#define FAST_SPEED 200
+#define MEDIUM_SPEED 150
+#define SLOW_SPEED 100
+
 // Global used for interrupt driven delay functions
 volatile unsigned int timer2_tick;
 void timer2_start(char unit);
@@ -475,42 +479,52 @@ char move_forward(oi_t *sensor, int centimeters)
 	int sum = 0;
 	int dist = 0;
 	char outputString[25];
+	float cent_moved;
+	char sensorData[60];
+	
 	//lprintf("Debug 1\n");
-	oi_set_wheels(150, 150); // move forward
+	
+	oi_set_wheels(MEDIUM_SPEED, MEDIUM_SPEED); // move forward
 	//lprintf("Debug 2\n");
 	while (sum < centimeters*10)
 	{
 		oi_update(sensor);
 		sum += sensor->distance;
-		lprintf("%d\n", sum);
+		//lprintf("%d\n", sum);
 		if(sensor->bumper_left)
 		{
 			oi_set_wheels(0, 0); // stop
+			
+			cent_moved = ((float) sum/10);
+			sprintf(sensorData, "Left Bumper Triggered | distance moved: %.1f centimeters", cent_moved);
+			USART_SendString(sensorData);
 
 			move_backward(sensor,10);
-			turn_clockwise(sensor,45);
-
-			USART_SendString("Left Bumper Triggered"); //
+			//turn_clockwise(sensor,45);
+			
 			return 1;
 		}
 		else if(sensor->bumper_right)
 		{
-			char sensorData[60];
 			oi_set_wheels(0, 0); // stop
-			move_backward(sensor,10);
-			turn_counterclockwise(sensor,45);
-			float cent_moved = ((float) sum/10);
+			
+			cent_moved = ((float) sum/10);
 			sprintf(sensorData, "Right Bumper Triggered | distance moved: %.1f centimeters", cent_moved);
 			USART_SendString(sensorData);
+
+			move_backward(sensor,10);
+			//turn_counterclockwise(sensor,45);
+			
+			
 			return 2;
 		}
 		
 		else if((sensor->cliff_frontleft_signal > 800))
 		{
-			char sensorData[60];
+			
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			float cent_moved = ((float) sum/10);
+			cent_moved = ((float) sum/10);
 			sprintf(sensorData, "Front Left Sensor Line Detected | distance moved: %.1f cm", cent_moved);
 			USART_SendString(sensorData);
 			return 3;
@@ -518,10 +532,10 @@ char move_forward(oi_t *sensor, int centimeters)
 		
 		else if((sensor->cliff_frontright_signal > 800))
 		{
-			char sensorData[60];
+
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			float cent_moved = ((float) sum/10);
+			cent_moved = ((float) sum/10);
 			sprintf(sensorData, "Front Right Sensor Line Detected | distance moved: %.1f cm", cent_moved);
 			USART_SendString(sensorData);
 			return 3;
@@ -529,10 +543,10 @@ char move_forward(oi_t *sensor, int centimeters)
 
 		else if((sensor->cliff_right_signal > 800))
 		{
-			char sensorData[60];
+
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			float cent_moved = ((float) sum/10);
+			cent_moved = ((float) sum/10);
 			sprintf(sensorData, "Right Sensor Line Detected | distance moved: %.1f cm", cent_moved);
 			USART_SendString(sensorData);
 			return 3;
@@ -540,10 +554,10 @@ char move_forward(oi_t *sensor, int centimeters)
 
 		else if((sensor->cliff_left_signal > 800))
 		{
-			char sensorData[60];
+
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			float cent_moved = ((float) sum/10);
+			cent_moved = ((float) sum/10);
 			sprintf(sensorData, "Left Sensor Line Detected | distance moved: %.1f cm", cent_moved);
 			USART_SendString(sensorData);
 			return 3;
@@ -551,8 +565,8 @@ char move_forward(oi_t *sensor, int centimeters)
 								
 		else if((sensor->wheeldrop_caster == 1) || (sensor->wheeldrop_left == 1) || (sensor->wheeldrop_right == 1))
 		{
-			char sensorData[60];
-			float cent_moved = ((float) sum/10);
+
+			cent_moved = ((float) sum/10);
 			sprintf(sensorData, "Cliff Edge Detected: Right Sensor: %d Front Right: %d Front Left%d Left: %d | distance moved: %.1f cm", (int) sensor->cliff_frontright_signal, (int) sensor->cliff_frontright_signal, (int) sensor->cliff_frontleft_signal, (int) sensor->cliff_frontleft_signal, cent_moved);
 			USART_SendString(sensorData);
 			lprintf("Cliff Edge Detected");
@@ -563,8 +577,8 @@ char move_forward(oi_t *sensor, int centimeters)
 		
 		else if (sensor->cliff_frontleft_signal < 10) 
 		{
-			char sensorData[60];
-			float cent_moved = ((float) sum/10);
+
+			cent_moved = ((float) sum/10);
 			sprintf(sensorData, "Cliff Edge Detected: Front Left | distance moved: %.1f cm", cent_moved);
 			USART_SendString(sensorData);
 			oi_set_wheels(0,0);
@@ -572,8 +586,8 @@ char move_forward(oi_t *sensor, int centimeters)
 		}
 		else if (sensor->cliff_frontright_signal < 10)
 		{
-			char sensorData[60];
-			float cent_moved = ((float) sum/10);
+
+			cent_moved = ((float) sum/10);
 			sprintf(sensorData, "Cliff Edge Detected: Front Right | distance moved: %.1f cm", cent_moved);
 			USART_SendString(sensorData);
 			oi_set_wheels(0,0);
@@ -581,8 +595,8 @@ char move_forward(oi_t *sensor, int centimeters)
 		}
 		else if (sensor->cliff_left_signal < 10) 
 		{
-			char sensorData[60];
-			float cent_moved = ((float) sum/10);
+
+			cent_moved = ((float) sum/10);
 			sprintf(sensorData, "Cliff Edge Detected: Left | distance moved: %.1f cm", cent_moved);		
 			USART_SendString(sensorData);	
 			oi_set_wheels(0,0);
@@ -590,8 +604,8 @@ char move_forward(oi_t *sensor, int centimeters)
 		}
 		else if (sensor->cliff_right_signal < 10)
 		{
-			char sensorData[60];
-			float cent_moved = ((float) sum/10);
+
+			cent_moved = ((float) sum/10);
 			sprintf(sensorData, "Cliff Edge Detected: Right | distance moved: %.1f cm", cent_moved);
 			USART_SendString(sensorData);		
 			oi_set_wheels(0,0);	
@@ -600,10 +614,11 @@ char move_forward(oi_t *sensor, int centimeters)
 	}
 
 	oi_set_wheels(0, 0); // stop
-	float cent_moved = ((float) sum/10);
+	cent_moved = ((float) sum/10);
 	sprintf(outputString, "Moved %.1f centimeters", cent_moved);
 	
 	USART_SendString(outputString);
+	USART_SendString(" ");
 
 	return 0;
 }
@@ -611,8 +626,10 @@ char move_forward(oi_t *sensor, int centimeters)
 
 void move_backward(oi_t *sensor, int centimeters)
 {
+	char sensorData[60];
+	float cent_moved;
 	int sum = 0;
-	oi_set_wheels(-200, -200); // move backward
+	oi_set_wheels(-FAST_SPEED, -FAST_SPEED); // move backward
 	while (sum < centimeters*10) {
 		oi_update(sensor);
 		sum -= sensor->distance;
@@ -620,13 +637,16 @@ void move_backward(oi_t *sensor, int centimeters)
 	
 	oi_set_wheels(0, 0); // stop	
 	//reportData(sensor);
+	cent_moved = ((float) sum/10);
+	sprintf(sensorData, "Moved backwards %.1f centimeters", cent_moved);
+	USART_SendString(sensorData);
 }
 
 void turn_clockwise(oi_t *sensor, int degrees)
 {
 	int sum = 0;
 	char outputString[20];
-	oi_set_wheels(-150, 150);
+	oi_set_wheels(-MEDIUM_SPEED, MEDIUM_SPEED);
 	
 		while (sum < degrees-12) {
 			oi_update(sensor);
@@ -637,7 +657,7 @@ void turn_clockwise(oi_t *sensor, int degrees)
 			char sensorData[60];
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			sprintf(sensorData, "Front Left Sensor Line Detected | degrees moved: %d", sum);
+			sprintf(sensorData, "Front Left Sensor Line Detected | degrees turned: %d", sum);
 			USART_SendString(sensorData);
 			return 3;
 		}
@@ -647,7 +667,7 @@ void turn_clockwise(oi_t *sensor, int degrees)
 			char sensorData[60];
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			sprintf(sensorData, "Front Right Sensor Line Detected | degrees moved: %d", sum);
+			sprintf(sensorData, "Front Right Sensor Line Detected | degrees turned: %d", sum);
 			USART_SendString(sensorData);
 			return 3;
 		}
@@ -657,7 +677,7 @@ void turn_clockwise(oi_t *sensor, int degrees)
 			char sensorData[60];
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			sprintf(sensorData, "Right Sensor Line Detected | distance moved: %d", sum);
+			sprintf(sensorData, "Right Sensor Line Detected | degrees turned: %d", sum);
 			USART_SendString(sensorData);
 			return 3;
 		}
@@ -667,7 +687,7 @@ void turn_clockwise(oi_t *sensor, int degrees)
 			char sensorData[60];
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			sprintf(sensorData, "Left Sensor Line Detected | distance moved: %d", sum);
+			sprintf(sensorData, "Left Sensor Line Detected | degrees turned: %d", sum);
 			USART_SendString(sensorData);
 			return 3;
 		}
@@ -679,16 +699,14 @@ void turn_clockwise(oi_t *sensor, int degrees)
 	
 	oi_set_wheels(0, 0); // stop
 	char turnMessage[40];
-	degrees -= 10;
-	sprintf(turnMessage,"Turned right %d degrees", degrees);
+	sprintf(turnMessage,"Turned right %d degrees", sum);
 	USART_SendString(turnMessage);
 }
 
 void turn_counterclockwise(oi_t *sensor, int degrees)
-{
+{	char sensorData[60];
 	int sum = 0;
-	char outputString[20];
-	oi_set_wheels(150, -150);
+	oi_set_wheels(MEDIUM_SPEED, -MEDIUM_SPEED);
 	
 	while (sum < degrees-12) 
 	{
@@ -697,97 +715,49 @@ void turn_counterclockwise(oi_t *sensor, int degrees)
 		
 		if((sensor->cliff_frontleft_signal > 800))
 		{
-			char sensorData[60];
+			
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			sprintf(sensorData, "Front Left Sensor Line Detected | degrees moved: %d", sum);
+			sprintf(sensorData, "Front Left Sensor Line Detected | degrees turned: %d", sum);
 			USART_SendString(sensorData);
 			return 3;
 		}
 		
 		else if((sensor->cliff_frontright_signal > 800))
 		{
-			char sensorData[60];
+
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			sprintf(sensorData, "Front Right Sensor Line Detected | degrees moved: %d", sum);
+			sprintf(sensorData, "Front Right Sensor Line Detected | degrees turned: %d", sum);
 			USART_SendString(sensorData);
 			return 3;
 		}
 
 		else if((sensor->cliff_right_signal > 800))
 		{
-			char sensorData[60];
+
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			sprintf(sensorData, "Right Sensor Line Detected | distance moved: %d", sum);
+			sprintf(sensorData, "Right Sensor Line Detected | degrees turned: %d", sum);
 			USART_SendString(sensorData);
 			return 3;
 		}
 
 		else if((sensor->cliff_left_signal > 800))
 		{
-			char sensorData[60];
+
 			lprintf("Line Detected");
 			oi_set_wheels(0,0);
-			sprintf(sensorData, "Left Sensor Line Detected | distance moved: %d", sum);
+			sprintf(sensorData, "Left Sensor Line Detected | degrees turned: %d", sum);
 			USART_SendString(sensorData);
 			return 3;
 		}
 	}
 	
-	/*else
-	{	
-		while (sum < degrees-10) 
-		{
-		oi_update(sensor);
-		sum += sensor->angle;
-		if((sensor->cliff_frontleft_signal > 800))
-		{
-			char sensorData[60];
-			lprintf("Line Detected");
-			oi_set_wheels(0,0);
-			sprintf(sensorData, "Front Left Sensor Line Detected | degrees moved: %d", sum);
-			USART_SendString(sensorData);
-			return 3;
-		}
-		
-		else if((sensor->cliff_frontright_signal > 800))
-		{
-			char sensorData[60];
-			lprintf("Line Detected");
-			oi_set_wheels(0,0);
-			sprintf(sensorData, "Front Right Sensor Line Detected | degrees moved: %d", sum);
-			USART_SendString(sensorData);
-			return 3;
-		}
-
-		else if((sensor->cliff_right_signal > 800))
-		{
-			char sensorData[60];
-			lprintf("Line Detected");
-			oi_set_wheels(0,0);
-			sprintf(sensorData, "Right Sensor Line Detected | distance moved: %d", sum);
-			USART_SendString(sensorData);
-			return 3;
-		}
-
-		else if((sensor->cliff_left_signal > 800))
-		{
-			char sensorData[60];
-			lprintf("Line Detected");
-			oi_set_wheels(0,0);
-			sprintf(sensorData, "Left Sensor Line Detected | distance moved: %d", sum);
-			USART_SendString(sensorData);
-			return 3;*/
-		//}
-		//}
-	
 	oi_set_wheels(0, 0); // stop
-	char turnMessage[40];
-	degrees -= 10;
-	sprintf(turnMessage,"Turned left %d degrees", degrees);
-	USART_SendString(turnMessage);
+	//degrees -= 10;
+	sprintf(sensorData,"Turned left %d degrees", sum);
+	USART_SendString(sensorData);
 }
 
 void reportData(oi_t *sensor)

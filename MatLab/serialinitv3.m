@@ -22,6 +22,9 @@ else
     return;
 end
 
+%port.BytesAvailableFcnMode = 'terminator';
+%port.BytesAvailableFcn = {@messageReceived,hObject};
+
 fopen(port);
 
 appendeditbox('Connected',handles,hObject);
