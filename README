@@ -72,6 +72,9 @@ Buttons
 Standard windows push-buttons set on the right side of the diagram.  There was a button for every function
 detailed in the Robot functionality.
 
+Input Box
+Values 0 - 9 to specify rotation angle and forward distance
+
 Graph
 A radial plot of the most recent data sent by the robot.  It would plot distance over radians.
 
