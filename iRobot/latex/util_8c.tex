@@ -1,0 +1,422 @@
+\hypertarget{util_8c}{\section{util.\-c File Reference}
+\label{util_8c}\index{util.\-c@{util.\-c}}
+}
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}util.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lcd.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{util_8c_ae84d68814770a49e3ec9279b8ed99563}{F\-A\-S\-T\-\_\-\-S\-P\-E\-E\-D}~200
+\item 
+\#define \hyperlink{util_8c_a7330b0156f8201e39caa2fcc7ff8a7fa}{M\-E\-D\-I\-U\-M\-\_\-\-S\-P\-E\-E\-D}~150
+\item 
+\#define \hyperlink{util_8c_af41dbabacf4f0b3886d49dc01def7b23}{S\-L\-O\-W\-\_\-\-S\-P\-E\-E\-D}~100
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{util_8c_aa1d8b4ca2abff18a392fb1a60405badb}{timer2\-\_\-start} (char unit)
+\begin{DoxyCompactList}\small\item\em Start timer2. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a0730547d803aa5321ee1c421597d85bb}{timer2\-\_\-stop} ()
+\begin{DoxyCompactList}\small\item\em Stop timer2. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a4b4a2ddcb45df0c8497c47d4ed800e2a}{A\-D\-C\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the I\-R distance sensor. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{util_8c_aaba15fa0cc94aebf942c43dc084d8c7c}{A\-D\-C\-\_\-read} (char channel)
+\begin{DoxyCompactList}\small\item\em Read the output from the A\-D\-C, currently using channel 2. \end{DoxyCompactList}\item 
+float \hyperlink{util_8c_ab25323c4339cd872ca92c5c4a6426799}{calc\-Cm} (unsigned int Digital\-Output)
+\begin{DoxyCompactList}\small\item\em Calculate the distance from A\-D\-C result in centimeters. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a81f8b753fa3af751d39ae3ffdddb5bbd}{wait\-\_\-ms} (unsigned int time\-\_\-val)
+\begin{DoxyCompactList}\small\item\em Blocks for a specified number of milliseconds. \end{DoxyCompactList}\item 
+\hyperlink{util_8c_ab70da2aaa3ee7e1b1a9c37f48d85d660}{I\-S\-R} (T\-I\-M\-E\-R2\-\_\-\-C\-O\-M\-P\-\_\-vect)
+\begin{DoxyCompactList}\small\item\em Interrupt handler (runs every 1 ms) \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_aae8b6fe63d14bdb55a6c985eb14f74fb}{init\-\_\-push\-\_\-buttons} (void)
+\begin{DoxyCompactList}\small\item\em Initialize P\-O\-R\-T\-C to accept push buttons as input. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a0f93cf294588bd654e61dc362c7517a9}{shaft\-\_\-encoder\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize P\-O\-R\-T\-C for input from the shaft encoder. \end{DoxyCompactList}\item 
+char \hyperlink{util_8c_a878d34348d21e7b97cee6383488861c2}{read\-\_\-shaft\-\_\-encoder} (void)
+\begin{DoxyCompactList}\small\item\em Read the shaft encoder. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a4808efef61f73d6624f055ede091a83d}{stepper\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize P\-O\-R\-T\-E to control the stepper motor. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a9ce12f4e9ee54399eed7c0adde445114}{move\-\_\-stepper\-\_\-motor\-\_\-by\-\_\-step} (int num\-\_\-steps, int direction)
+\begin{DoxyCompactList}\small\item\em Turn the Stepper Motor. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a1768ff47582332b025d54dca69063fd0}{ping\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em initializes ping sensor \end{DoxyCompactList}\item 
+float \hyperlink{util_8c_a19b62e4b5c3d3666ba5290156a13c2b5}{ping\-\_\-read} (void)
+\begin{DoxyCompactList}\small\item\em Reads the current distance on the sonar. \end{DoxyCompactList}\item 
+\hyperlink{util_8c_a5da59e05fa5ade4be7c7656aee78291a}{I\-S\-R} (T\-I\-M\-E\-R1\-\_\-\-C\-A\-P\-T\-\_\-vect)
+\begin{DoxyCompactList}\small\item\em Gets called when we have a rising or falling edge depending on T\-C\-C\-R1\-B bit 6. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a6ee4cad698c9131781dc15982a480fbf}{send\-\_\-pulse} (void)
+\begin{DoxyCompactList}\small\item\em send a pulse on P\-D4 \end{DoxyCompactList}\item 
+float \hyperlink{util_8c_a51dc98ae63d63a322a8c7c1d1cf58c9d}{time2dist} (unsigned int time)
+\begin{DoxyCompactList}\small\item\em Converts the time that we measure into a distance in centimeters, takes in count from read. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a9912d856a12a45c35612131dcf75f6d8}{servo\-\_\-turn} (int degrees)
+\begin{DoxyCompactList}\small\item\em turns the servo motor a specific degrees \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a6d0ecff8ad2f92e636ffa15e06725690}{timer3\-\_\-init} (void)
+\item 
+char \hyperlink{util_8c_af09f72417b87d53446884d1610e2a693}{read\-\_\-push\-\_\-buttons} (void)
+\begin{DoxyCompactList}\small\item\em Return the position of button being pushed. \end{DoxyCompactList}\item 
+char \hyperlink{util_8c_acaaf5f06661cdbc0f5e1171aecc0c2e8}{move\-\_\-forward} (\hyperlink{structoi__t}{oi\-\_\-t} $\ast$sensor, int centimeters)
+\begin{DoxyCompactList}\small\item\em Move forward contains all other functions, allows for error checking while moving. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a2fc7dae9ec70755a5f666bd1a8a72fb9}{move\-\_\-backward} (\hyperlink{structoi__t}{oi\-\_\-t} $\ast$sensor, int centimeters)
+\begin{DoxyCompactList}\small\item\em Moves i\-Robot Create platform backwards a specified value of centimeters. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a0daa1cec02cab1e6873ce4a18c76a730}{turn\-\_\-clockwise} (\hyperlink{structoi__t}{oi\-\_\-t} $\ast$sensor, int degrees)
+\begin{DoxyCompactList}\small\item\em turns clockwise by a given degree \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_abc308d287018ac7eb85dc152fd7edcfb}{turn\-\_\-counterclockwise} (\hyperlink{structoi__t}{oi\-\_\-t} $\ast$sensor, int degrees)
+\begin{DoxyCompactList}\small\item\em turns clockwise by a given degree \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a8494a751407346c6682b0536a2d2581a}{report\-Data} (\hyperlink{structoi__t}{oi\-\_\-t} $\ast$sensor)
+\begin{DoxyCompactList}\small\item\em sends all sensor data back through U\-S\-A\-R\-T \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a16ccfb091f6e90d02c68e770bda3bc7e}{song\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Plays song 'Take on me'. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile unsigned int \hyperlink{util_8c_aa8769c4c2aeb2f81870e03d197faf4cb}{timer2\-\_\-tick}
+\item 
+volatile unsigned \hyperlink{util_8c_ad9bc96f60a5cf8803b7526340ca97fa3}{current\-\_\-time} = 0
+\item 
+volatile int \hyperlink{util_8c_a11d6fb3c359aea738941075e61c31efe}{update\-\_\-flag} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{util_8c_ae84d68814770a49e3ec9279b8ed99563}{\index{util.\-c@{util.\-c}!F\-A\-S\-T\-\_\-\-S\-P\-E\-E\-D@{F\-A\-S\-T\-\_\-\-S\-P\-E\-E\-D}}
+\index{F\-A\-S\-T\-\_\-\-S\-P\-E\-E\-D@{F\-A\-S\-T\-\_\-\-S\-P\-E\-E\-D}!util.c@{util.\-c}}
+\subsubsection[{F\-A\-S\-T\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-A\-S\-T\-\_\-\-S\-P\-E\-E\-D~200}}\label{util_8c_ae84d68814770a49e3ec9279b8ed99563}
+\hyperlink{util_8c}{util.\-c}\-: utility functions for the Atmel platform
+
+For an overview of how timer based interrupts work, see page 111 and 133-\/137 of the Atmel Mega128 User Guide
+
+\begin{DoxyAuthor}{Author}
+Zhao Zhang, Chad Nelson, Nick Montelibano, Alex Lende, Chris Chafe, Nic Dubois, Ben Williams 
+\end{DoxyAuthor}
+\hypertarget{util_8c_a7330b0156f8201e39caa2fcc7ff8a7fa}{\index{util.\-c@{util.\-c}!M\-E\-D\-I\-U\-M\-\_\-\-S\-P\-E\-E\-D@{M\-E\-D\-I\-U\-M\-\_\-\-S\-P\-E\-E\-D}}
+\index{M\-E\-D\-I\-U\-M\-\_\-\-S\-P\-E\-E\-D@{M\-E\-D\-I\-U\-M\-\_\-\-S\-P\-E\-E\-D}!util.c@{util.\-c}}
+\subsubsection[{M\-E\-D\-I\-U\-M\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-E\-D\-I\-U\-M\-\_\-\-S\-P\-E\-E\-D~150}}\label{util_8c_a7330b0156f8201e39caa2fcc7ff8a7fa}
+\hypertarget{util_8c_af41dbabacf4f0b3886d49dc01def7b23}{\index{util.\-c@{util.\-c}!S\-L\-O\-W\-\_\-\-S\-P\-E\-E\-D@{S\-L\-O\-W\-\_\-\-S\-P\-E\-E\-D}}
+\index{S\-L\-O\-W\-\_\-\-S\-P\-E\-E\-D@{S\-L\-O\-W\-\_\-\-S\-P\-E\-E\-D}!util.c@{util.\-c}}
+\subsubsection[{S\-L\-O\-W\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-L\-O\-W\-\_\-\-S\-P\-E\-E\-D~100}}\label{util_8c_af41dbabacf4f0b3886d49dc01def7b23}
+
+
+\subsection{Function Documentation}
+\hypertarget{util_8c_a4b4a2ddcb45df0c8497c47d4ed800e2a}{\index{util.\-c@{util.\-c}!A\-D\-C\-\_\-init@{A\-D\-C\-\_\-init}}
+\index{A\-D\-C\-\_\-init@{A\-D\-C\-\_\-init}!util.c@{util.\-c}}
+\subsubsection[{A\-D\-C\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void A\-D\-C\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a4b4a2ddcb45df0c8497c47d4ed800e2a}
+
+
+Initialize the I\-R distance sensor. 
+
+\hypertarget{util_8c_aaba15fa0cc94aebf942c43dc084d8c7c}{\index{util.\-c@{util.\-c}!A\-D\-C\-\_\-read@{A\-D\-C\-\_\-read}}
+\index{A\-D\-C\-\_\-read@{A\-D\-C\-\_\-read}!util.c@{util.\-c}}
+\subsubsection[{A\-D\-C\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int A\-D\-C\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{char}]{channel}
+\end{DoxyParamCaption}
+)}}\label{util_8c_aaba15fa0cc94aebf942c43dc084d8c7c}
+
+
+Read the output from the A\-D\-C, currently using channel 2. 
+
+\hypertarget{util_8c_ab25323c4339cd872ca92c5c4a6426799}{\index{util.\-c@{util.\-c}!calc\-Cm@{calc\-Cm}}
+\index{calc\-Cm@{calc\-Cm}!util.c@{util.\-c}}
+\subsubsection[{calc\-Cm}]{\setlength{\rightskip}{0pt plus 5cm}float calc\-Cm (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{Digital\-Output}
+\end{DoxyParamCaption}
+)}}\label{util_8c_ab25323c4339cd872ca92c5c4a6426799}
+
+
+Calculate the distance from A\-D\-C result in centimeters. 
+
+\hypertarget{util_8c_aae8b6fe63d14bdb55a6c985eb14f74fb}{\index{util.\-c@{util.\-c}!init\-\_\-push\-\_\-buttons@{init\-\_\-push\-\_\-buttons}}
+\index{init\-\_\-push\-\_\-buttons@{init\-\_\-push\-\_\-buttons}!util.c@{util.\-c}}
+\subsubsection[{init\-\_\-push\-\_\-buttons}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-push\-\_\-buttons (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_aae8b6fe63d14bdb55a6c985eb14f74fb}
+
+
+Initialize P\-O\-R\-T\-C to accept push buttons as input. 
+
+Initialize P\-O\-R\-T\-C, which is used by the push buttons. \hypertarget{util_8c_ab70da2aaa3ee7e1b1a9c37f48d85d660}{\index{util.\-c@{util.\-c}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!util.c@{util.\-c}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{T\-I\-M\-E\-R2\-\_\-\-C\-O\-M\-P\-\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_ab70da2aaa3ee7e1b1a9c37f48d85d660}
+
+
+Interrupt handler (runs every 1 ms) 
+
+\hypertarget{util_8c_a5da59e05fa5ade4be7c7656aee78291a}{\index{util.\-c@{util.\-c}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!util.c@{util.\-c}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{T\-I\-M\-E\-R1\-\_\-\-C\-A\-P\-T\-\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a5da59e05fa5ade4be7c7656aee78291a}
+
+
+Gets called when we have a rising or falling edge depending on T\-C\-C\-R1\-B bit 6. 
+
+\hypertarget{util_8c_a2fc7dae9ec70755a5f666bd1a8a72fb9}{\index{util.\-c@{util.\-c}!move\-\_\-backward@{move\-\_\-backward}}
+\index{move\-\_\-backward@{move\-\_\-backward}!util.c@{util.\-c}}
+\subsubsection[{move\-\_\-backward}]{\setlength{\rightskip}{0pt plus 5cm}void move\-\_\-backward (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\-\_\-t} $\ast$}]{sensor, }
+\item[{int}]{centimeters}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a2fc7dae9ec70755a5f666bd1a8a72fb9}
+
+
+Moves i\-Robot Create platform backwards a specified value of centimeters. 
+
+\hypertarget{util_8c_acaaf5f06661cdbc0f5e1171aecc0c2e8}{\index{util.\-c@{util.\-c}!move\-\_\-forward@{move\-\_\-forward}}
+\index{move\-\_\-forward@{move\-\_\-forward}!util.c@{util.\-c}}
+\subsubsection[{move\-\_\-forward}]{\setlength{\rightskip}{0pt plus 5cm}char move\-\_\-forward (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\-\_\-t} $\ast$}]{sensor, }
+\item[{int}]{centimeters}
+\end{DoxyParamCaption}
+)}}\label{util_8c_acaaf5f06661cdbc0f5e1171aecc0c2e8}
+
+
+Move forward contains all other functions, allows for error checking while moving. 
+
+\hypertarget{util_8c_a9ce12f4e9ee54399eed7c0adde445114}{\index{util.\-c@{util.\-c}!move\-\_\-stepper\-\_\-motor\-\_\-by\-\_\-step@{move\-\_\-stepper\-\_\-motor\-\_\-by\-\_\-step}}
+\index{move\-\_\-stepper\-\_\-motor\-\_\-by\-\_\-step@{move\-\_\-stepper\-\_\-motor\-\_\-by\-\_\-step}!util.c@{util.\-c}}
+\subsubsection[{move\-\_\-stepper\-\_\-motor\-\_\-by\-\_\-step}]{\setlength{\rightskip}{0pt plus 5cm}void move\-\_\-stepper\-\_\-motor\-\_\-by\-\_\-step (
+\begin{DoxyParamCaption}
+\item[{int}]{num\-\_\-steps, }
+\item[{int}]{direction}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a9ce12f4e9ee54399eed7c0adde445114}
+
+
+Turn the Stepper Motor. 
+
+Stepper motor move function.
+
+Turn the stepper motor a given number of steps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\-\_\-steps} & A value between 1 and 200 steps (1.\-8 to 360 degrees) \\
+\hline
+{\em direction} & Indication of direction\-: 1 for C\-W and -\/1 for C\-C\-W \\
+\hline
+\end{DoxyParams}
+\hypertarget{util_8c_a1768ff47582332b025d54dca69063fd0}{\index{util.\-c@{util.\-c}!ping\-\_\-init@{ping\-\_\-init}}
+\index{ping\-\_\-init@{ping\-\_\-init}!util.c@{util.\-c}}
+\subsubsection[{ping\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ping\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a1768ff47582332b025d54dca69063fd0}
+
+
+initializes ping sensor 
+
+\hypertarget{util_8c_a19b62e4b5c3d3666ba5290156a13c2b5}{\index{util.\-c@{util.\-c}!ping\-\_\-read@{ping\-\_\-read}}
+\index{ping\-\_\-read@{ping\-\_\-read}!util.c@{util.\-c}}
+\subsubsection[{ping\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}float ping\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a19b62e4b5c3d3666ba5290156a13c2b5}
+
+
+Reads the current distance on the sonar. 
+
+\hypertarget{util_8c_af09f72417b87d53446884d1610e2a693}{\index{util.\-c@{util.\-c}!read\-\_\-push\-\_\-buttons@{read\-\_\-push\-\_\-buttons}}
+\index{read\-\_\-push\-\_\-buttons@{read\-\_\-push\-\_\-buttons}!util.c@{util.\-c}}
+\subsubsection[{read\-\_\-push\-\_\-buttons}]{\setlength{\rightskip}{0pt plus 5cm}char read\-\_\-push\-\_\-buttons (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_af09f72417b87d53446884d1610e2a693}
+
+
+Return the position of button being pushed. 
+
+Return the position of button being pushed. \begin{DoxyReturn}{Returns}
+the position of the button being pushed. A 1 is the rightmost button. 0 indicates no button being pressed 
+\end{DoxyReturn}
+\hypertarget{util_8c_a878d34348d21e7b97cee6383488861c2}{\index{util.\-c@{util.\-c}!read\-\_\-shaft\-\_\-encoder@{read\-\_\-shaft\-\_\-encoder}}
+\index{read\-\_\-shaft\-\_\-encoder@{read\-\_\-shaft\-\_\-encoder}!util.c@{util.\-c}}
+\subsubsection[{read\-\_\-shaft\-\_\-encoder}]{\setlength{\rightskip}{0pt plus 5cm}char read\-\_\-shaft\-\_\-encoder (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a878d34348d21e7b97cee6383488861c2}
+
+
+Read the shaft encoder. 
+
+Shaft encoder read function.
+
+Reads the two switches of the shaft encoder and compares the values to the previous read. This function should be called very frequently for the best results.
+
+\begin{DoxyReturn}{Returns}
+a value indicating the shaft encoder has moved\-: 0 = no rotation (switches did not change) 1 = C\-W rotation -\/1 = C\-C\-W rotation 
+\end{DoxyReturn}
+\hypertarget{util_8c_a8494a751407346c6682b0536a2d2581a}{\index{util.\-c@{util.\-c}!report\-Data@{report\-Data}}
+\index{report\-Data@{report\-Data}!util.c@{util.\-c}}
+\subsubsection[{report\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void report\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\-\_\-t} $\ast$}]{sensor}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a8494a751407346c6682b0536a2d2581a}
+
+
+sends all sensor data back through U\-S\-A\-R\-T 
+
+\hypertarget{util_8c_a6ee4cad698c9131781dc15982a480fbf}{\index{util.\-c@{util.\-c}!send\-\_\-pulse@{send\-\_\-pulse}}
+\index{send\-\_\-pulse@{send\-\_\-pulse}!util.c@{util.\-c}}
+\subsubsection[{send\-\_\-pulse}]{\setlength{\rightskip}{0pt plus 5cm}void send\-\_\-pulse (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a6ee4cad698c9131781dc15982a480fbf}
+
+
+send a pulse on P\-D4 
+
+\hypertarget{util_8c_a9912d856a12a45c35612131dcf75f6d8}{\index{util.\-c@{util.\-c}!servo\-\_\-turn@{servo\-\_\-turn}}
+\index{servo\-\_\-turn@{servo\-\_\-turn}!util.c@{util.\-c}}
+\subsubsection[{servo\-\_\-turn}]{\setlength{\rightskip}{0pt plus 5cm}void servo\-\_\-turn (
+\begin{DoxyParamCaption}
+\item[{int}]{degrees}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a9912d856a12a45c35612131dcf75f6d8}
+
+
+turns the servo motor a specific degrees 
+
+move to the position \hypertarget{util_8c_a0f93cf294588bd654e61dc362c7517a9}{\index{util.\-c@{util.\-c}!shaft\-\_\-encoder\-\_\-init@{shaft\-\_\-encoder\-\_\-init}}
+\index{shaft\-\_\-encoder\-\_\-init@{shaft\-\_\-encoder\-\_\-init}!util.c@{util.\-c}}
+\subsubsection[{shaft\-\_\-encoder\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void shaft\-\_\-encoder\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a0f93cf294588bd654e61dc362c7517a9}
+
+
+Initialize P\-O\-R\-T\-C for input from the shaft encoder. 
+
+Shaft encoder initialization. \hypertarget{util_8c_a16ccfb091f6e90d02c68e770bda3bc7e}{\index{util.\-c@{util.\-c}!song\-\_\-init@{song\-\_\-init}}
+\index{song\-\_\-init@{song\-\_\-init}!util.c@{util.\-c}}
+\subsubsection[{song\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void song\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a16ccfb091f6e90d02c68e770bda3bc7e}
+
+
+Plays song 'Take on me'. 
+
+\hypertarget{util_8c_a4808efef61f73d6624f055ede091a83d}{\index{util.\-c@{util.\-c}!stepper\-\_\-init@{stepper\-\_\-init}}
+\index{stepper\-\_\-init@{stepper\-\_\-init}!util.c@{util.\-c}}
+\subsubsection[{stepper\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void stepper\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a4808efef61f73d6624f055ede091a83d}
+
+
+Initialize P\-O\-R\-T\-E to control the stepper motor. 
+
+Initialize Stepper Motor. \hypertarget{util_8c_a51dc98ae63d63a322a8c7c1d1cf58c9d}{\index{util.\-c@{util.\-c}!time2dist@{time2dist}}
+\index{time2dist@{time2dist}!util.c@{util.\-c}}
+\subsubsection[{time2dist}]{\setlength{\rightskip}{0pt plus 5cm}float time2dist (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{time}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a51dc98ae63d63a322a8c7c1d1cf58c9d}
+
+
+Converts the time that we measure into a distance in centimeters, takes in count from read. 
+
+\hypertarget{util_8c_aa1d8b4ca2abff18a392fb1a60405badb}{\index{util.\-c@{util.\-c}!timer2\-\_\-start@{timer2\-\_\-start}}
+\index{timer2\-\_\-start@{timer2\-\_\-start}!util.c@{util.\-c}}
+\subsubsection[{timer2\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void timer2\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{char}]{unit}
+\end{DoxyParamCaption}
+)}}\label{util_8c_aa1d8b4ca2abff18a392fb1a60405badb}
+
+
+Start timer2. 
+
+\hypertarget{util_8c_a0730547d803aa5321ee1c421597d85bb}{\index{util.\-c@{util.\-c}!timer2\-\_\-stop@{timer2\-\_\-stop}}
+\index{timer2\-\_\-stop@{timer2\-\_\-stop}!util.c@{util.\-c}}
+\subsubsection[{timer2\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}void timer2\-\_\-stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a0730547d803aa5321ee1c421597d85bb}
+
+
+Stop timer2. 
+
+\hypertarget{util_8c_a6d0ecff8ad2f92e636ffa15e06725690}{\index{util.\-c@{util.\-c}!timer3\-\_\-init@{timer3\-\_\-init}}
+\index{timer3\-\_\-init@{timer3\-\_\-init}!util.c@{util.\-c}}
+\subsubsection[{timer3\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void timer3\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a6d0ecff8ad2f92e636ffa15e06725690}
+\hypertarget{util_8c_a0daa1cec02cab1e6873ce4a18c76a730}{\index{util.\-c@{util.\-c}!turn\-\_\-clockwise@{turn\-\_\-clockwise}}
+\index{turn\-\_\-clockwise@{turn\-\_\-clockwise}!util.c@{util.\-c}}
+\subsubsection[{turn\-\_\-clockwise}]{\setlength{\rightskip}{0pt plus 5cm}void turn\-\_\-clockwise (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\-\_\-t} $\ast$}]{sensor, }
+\item[{int}]{degrees}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a0daa1cec02cab1e6873ce4a18c76a730}
+
+
+turns clockwise by a given degree 
+
+\hypertarget{util_8c_abc308d287018ac7eb85dc152fd7edcfb}{\index{util.\-c@{util.\-c}!turn\-\_\-counterclockwise@{turn\-\_\-counterclockwise}}
+\index{turn\-\_\-counterclockwise@{turn\-\_\-counterclockwise}!util.c@{util.\-c}}
+\subsubsection[{turn\-\_\-counterclockwise}]{\setlength{\rightskip}{0pt plus 5cm}void turn\-\_\-counterclockwise (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\-\_\-t} $\ast$}]{sensor, }
+\item[{int}]{degrees}
+\end{DoxyParamCaption}
+)}}\label{util_8c_abc308d287018ac7eb85dc152fd7edcfb}
+
+
+turns clockwise by a given degree 
+
+\hypertarget{util_8c_a81f8b753fa3af751d39ae3ffdddb5bbd}{\index{util.\-c@{util.\-c}!wait\-\_\-ms@{wait\-\_\-ms}}
+\index{wait\-\_\-ms@{wait\-\_\-ms}!util.c@{util.\-c}}
+\subsubsection[{wait\-\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}void wait\-\_\-ms (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{time\-\_\-val}
+\end{DoxyParamCaption}
+)}}\label{util_8c_a81f8b753fa3af751d39ae3ffdddb5bbd}
+
+
+Blocks for a specified number of milliseconds. 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{util_8c_ad9bc96f60a5cf8803b7526340ca97fa3}{\index{util.\-c@{util.\-c}!current\-\_\-time@{current\-\_\-time}}
+\index{current\-\_\-time@{current\-\_\-time}!util.c@{util.\-c}}
+\subsubsection[{current\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned current\-\_\-time = 0}}\label{util_8c_ad9bc96f60a5cf8803b7526340ca97fa3}
+\hypertarget{util_8c_aa8769c4c2aeb2f81870e03d197faf4cb}{\index{util.\-c@{util.\-c}!timer2\-\_\-tick@{timer2\-\_\-tick}}
+\index{timer2\-\_\-tick@{timer2\-\_\-tick}!util.c@{util.\-c}}
+\subsubsection[{timer2\-\_\-tick}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned int timer2\-\_\-tick}}\label{util_8c_aa8769c4c2aeb2f81870e03d197faf4cb}
+\hypertarget{util_8c_a11d6fb3c359aea738941075e61c31efe}{\index{util.\-c@{util.\-c}!update\-\_\-flag@{update\-\_\-flag}}
+\index{update\-\_\-flag@{update\-\_\-flag}!util.c@{util.\-c}}
+\subsubsection[{update\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}volatile int update\-\_\-flag = 0}}\label{util_8c_a11d6fb3c359aea738941075e61c31efe}

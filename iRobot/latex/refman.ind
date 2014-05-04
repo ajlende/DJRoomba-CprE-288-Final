@@ -1,0 +1,942 @@
+\begin{theindex}
+
+  \item {A\discretionary {-}{}{}D\discretionary {-}{}{}C\discretionary {-}{}{}\_\discretionary {-}{}{}init}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{25}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{29}
+  \item {A\discretionary {-}{}{}D\discretionary {-}{}{}C\discretionary {-}{}{}\_\discretionary {-}{}{}read}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{25}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{29}
+  \item {angle}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {B\discretionary {-}{}{}A\discretionary {-}{}{}U\discretionary {-}{}{}D}
+    \subitem {usart.\discretionary {-}{}{}c}, \hyperpage{22}
+  \item {bumper\discretionary {-}{}{}\_\discretionary {-}{}{}left}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {bumper\discretionary {-}{}{}\_\discretionary {-}{}{}right}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {button\discretionary {-}{}{}\_\discretionary {-}{}{}advance}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {button\discretionary {-}{}{}\_\discretionary {-}{}{}play}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {calc\discretionary {-}{}{}Cm}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{25}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{29}
+  \item {capacity}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}baud}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}io0}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}io1}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}io2}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}io3}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}voltage}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {charge}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {charging\discretionary {-}{}{}\_\discretionary {-}{}{}state}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}frontleft}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}frontleft\discretionary {-}{}{}\_\discretionary {-}{}{}signal}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}frontright}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}frontright\discretionary {-}{}{}\_\discretionary {-}{}{}signal}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}left}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}left\discretionary {-}{}{}\_\discretionary {-}{}{}signal}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}right}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}right\discretionary {-}{}{}\_\discretionary {-}{}{}signal}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {current}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {current\discretionary {-}{}{}\_\discretionary {-}{}{}time}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{28}
+
+  \indexspace
+
+  \item {degrees\discretionary {-}{}{}\_\discretionary {-}{}{}end}
+    \subitem {object\discretionary {-}{}{}\_\discretionary {-}{}{}s}, 
+		\hyperpage{5}
+  \item {degrees\discretionary {-}{}{}\_\discretionary {-}{}{}start}
+    \subitem {object\discretionary {-}{}{}\_\discretionary {-}{}{}s}, 
+		\hyperpage{5}
+  \item {distance}
+    \subitem {object\discretionary {-}{}{}\_\discretionary {-}{}{}s}, 
+		\hyperpage{5}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {F\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}P\discretionary {-}{}{}U}
+    \subitem {usart.\discretionary {-}{}{}c}, \hyperpage{22}
+  \item {F\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}E\discretionary {-}{}{}E\discretionary {-}{}{}D}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{25}
+  \item {F\discretionary {-}{}{}O\discretionary {-}{}{}S\discretionary {-}{}{}C}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{18}
+
+  \indexspace
+
+  \item {go\discretionary {-}{}{}\_\discretionary {-}{}{}charge}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{15}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+
+  \indexspace
+
+  \item {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}B\discretionary {-}{}{}L\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}K\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}N}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}S\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}O\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}F\discretionary {-}{}{}T}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}S\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}N}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}S\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}I\discretionary {-}{}{}F\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}C}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}S\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}I\discretionary {-}{}{}F\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}C}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}L\discretionary {-}{}{}A\discretionary {-}{}{}Y\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}L}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}L\discretionary {-}{}{}A\discretionary {-}{}{}Y\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}N}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}C\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}R}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}T\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}M\discretionary {-}{}{}E}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {home\discretionary {-}{}{}\_\discretionary {-}{}{}base\discretionary {-}{}{}\_\discretionary {-}{}{}charger\discretionary {-}{}{}\_\discretionary {-}{}{}on}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {i\discretionary {-}{}{}Robot Final.\discretionary {-}{}{}c}, 
+		\hyperpage{9}
+    \subitem {main}, \hyperpage{9}
+    \subitem {object\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{9}
+  \item {I\discretionary {-}{}{}S\discretionary {-}{}{}R}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{25}
+  \item {infrared\discretionary {-}{}{}\_\discretionary {-}{}{}byte}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+  \item {init\discretionary {-}{}{}\_\discretionary {-}{}{}push\discretionary {-}{}{}\_\discretionary {-}{}{}buttons}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{25}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{29}
+  \item {internal\discretionary {-}{}{}\_\discretionary {-}{}{}charger\discretionary {-}{}{}\_\discretionary {-}{}{}on}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {L\discretionary {-}{}{}C\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}H\discretionary {-}{}{}E\discretionary {-}{}{}I\discretionary {-}{}{}G\discretionary {-}{}{}H\discretionary {-}{}{}T}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {L\discretionary {-}{}{}C\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}O\discretionary {-}{}{}T\discretionary {-}{}{}A\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}H\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}S}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {L\discretionary {-}{}{}C\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}W\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}T\discretionary {-}{}{}H}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+  \item {lcd.\discretionary {-}{}{}c}, \hyperpage{10}
+    \subitem {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}B\discretionary {-}{}{}L\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}K\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}N}, 
+		\hyperpage{11}
+    \subitem {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}S\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}N}, 
+		\hyperpage{11}
+    \subitem {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}L\discretionary {-}{}{}A\discretionary {-}{}{}Y\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}L}, 
+		\hyperpage{11}
+    \subitem {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}L\discretionary {-}{}{}A\discretionary {-}{}{}Y\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}N}, 
+		\hyperpage{11}
+    \subitem {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}C\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}R}, 
+		\hyperpage{11}
+    \subitem {H\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}T\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}M\discretionary {-}{}{}E}, 
+		\hyperpage{11}
+    \subitem {L\discretionary {-}{}{}C\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}H\discretionary {-}{}{}E\discretionary {-}{}{}I\discretionary {-}{}{}G\discretionary {-}{}{}H\discretionary {-}{}{}T}, 
+		\hyperpage{11}
+    \subitem {L\discretionary {-}{}{}C\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}O\discretionary {-}{}{}T\discretionary {-}{}{}A\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}H\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}S}, 
+		\hyperpage{11}
+    \subitem {L\discretionary {-}{}{}C\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}W\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}T\discretionary {-}{}{}H}, 
+		\hyperpage{11}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}clear}, 
+		\hyperpage{11}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}command}, 
+		\hyperpage{12}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}display\discretionary {-}{}{}\_\discretionary {-}{}{}shift\discretionary {-}{}{}\_\discretionary {-}{}{}left}, 
+		\hyperpage{12}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}anyloc}, 
+		\hyperpage{12}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line1}, 
+		\hyperpage{12}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line2}, 
+		\hyperpage{12}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line3}, 
+		\hyperpage{12}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line4}, 
+		\hyperpage{12}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{12}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}putc}, 
+		\hyperpage{12}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}puts}, 
+		\hyperpage{12}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}toggle\discretionary {-}{}{}\_\discretionary {-}{}{}clear}, 
+		\hyperpage{12}
+    \subitem {lprintf}, \hyperpage{12}
+  \item {lcd.\discretionary {-}{}{}h}, \hyperpage{13}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}clear}, 
+		\hyperpage{13}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}command}, 
+		\hyperpage{13}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line1}, 
+		\hyperpage{14}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line2}, 
+		\hyperpage{14}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line3}, 
+		\hyperpage{14}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line4}, 
+		\hyperpage{14}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{14}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}putc}, 
+		\hyperpage{14}
+    \subitem {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}puts}, 
+		\hyperpage{14}
+    \subitem {lprintf}, \hyperpage{14}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}clear}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{11}
+    \subitem {lcd.\discretionary {-}{}{}h}, \hyperpage{13}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}command}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+    \subitem {lcd.\discretionary {-}{}{}h}, \hyperpage{13}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}display\discretionary {-}{}{}\_\discretionary {-}{}{}shift\discretionary {-}{}{}\_\discretionary {-}{}{}left}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}anyloc}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line1}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+    \subitem {lcd.\discretionary {-}{}{}h}, \hyperpage{14}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line2}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+    \subitem {lcd.\discretionary {-}{}{}h}, \hyperpage{14}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line3}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+    \subitem {lcd.\discretionary {-}{}{}h}, \hyperpage{14}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}home\discretionary {-}{}{}\_\discretionary {-}{}{}line4}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+    \subitem {lcd.\discretionary {-}{}{}h}, \hyperpage{14}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}init}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+    \subitem {lcd.\discretionary {-}{}{}h}, \hyperpage{14}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}putc}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+    \subitem {lcd.\discretionary {-}{}{}h}, \hyperpage{14}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}puts}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+    \subitem {lcd.\discretionary {-}{}{}h}, \hyperpage{14}
+  \item {lcd\discretionary {-}{}{}\_\discretionary {-}{}{}toggle\discretionary {-}{}{}\_\discretionary {-}{}{}clear}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+  \item {lprintf}
+    \subitem {lcd.\discretionary {-}{}{}c}, \hyperpage{12}
+    \subitem {lcd.\discretionary {-}{}{}h}, \hyperpage{14}
+
+  \indexspace
+
+  \item {M\discretionary {-}{}{}A\discretionary {-}{}{}X}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{18}
+  \item {M\discretionary {-}{}{}E\discretionary {-}{}{}D\discretionary {-}{}{}I\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}E\discretionary {-}{}{}E\discretionary {-}{}{}D}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{25}
+  \item {M\discretionary {-}{}{}I\discretionary {-}{}{}N}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {main}
+    \subitem {i\discretionary {-}{}{}Robot Final.\discretionary {-}{}{}c}, 
+		\hyperpage{9}
+  \item {move\discretionary {-}{}{}\_\discretionary {-}{}{}backward}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{25}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{29}
+  \item {move\discretionary {-}{}{}\_\discretionary {-}{}{}forward}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{25}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{29}
+  \item {move\discretionary {-}{}{}\_\discretionary {-}{}{}stepper\discretionary {-}{}{}\_\discretionary {-}{}{}motor\discretionary {-}{}{}\_\discretionary {-}{}{}by\discretionary {-}{}{}\_\discretionary {-}{}{}step}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{26}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {number\discretionary {-}{}{}\_\discretionary {-}{}{}packets}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}B\discretionary {-}{}{}A\discretionary {-}{}{}U\discretionary {-}{}{}D}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}N}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}L}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}R\discretionary {-}{}{}I\discretionary {-}{}{}V\discretionary {-}{}{}E}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}F\discretionary {-}{}{}U\discretionary {-}{}{}L\discretionary {-}{}{}L}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}D\discretionary {-}{}{}S}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}A\discretionary {-}{}{}X}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}O\discretionary {-}{}{}T\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}S}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}U\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}U\discretionary {-}{}{}T\discretionary {-}{}{}S}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}L\discretionary {-}{}{}A\discretionary {-}{}{}Y}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}O\discretionary {-}{}{}W\discretionary {-}{}{}E\discretionary {-}{}{}R}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}F\discretionary {-}{}{}E}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}C\discretionary {-}{}{}R\discretionary {-}{}{}I\discretionary {-}{}{}P\discretionary {-}{}{}T}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}S\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}S}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}G}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}O\discretionary {-}{}{}T}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}M}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{19}
+  \item {object\discretionary {-}{}{}\_\discretionary {-}{}{}s}, 
+		\hyperpage{5}
+    \subitem {degrees\discretionary {-}{}{}\_\discretionary {-}{}{}end}, 
+		\hyperpage{5}
+    \subitem {degrees\discretionary {-}{}{}\_\discretionary {-}{}{}start}, 
+		\hyperpage{5}
+    \subitem {distance}, \hyperpage{5}
+    \subitem {width}, \hyperpage{5}
+  \item {object\discretionary {-}{}{}\_\discretionary {-}{}{}t}
+    \subitem {i\discretionary {-}{}{}Robot Final.\discretionary {-}{}{}c}, 
+		\hyperpage{9}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}alloc}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{15}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}byte\discretionary {-}{}{}\_\discretionary {-}{}{}rx}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{15}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}byte\discretionary {-}{}{}\_\discretionary {-}{}{}tx}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{15}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{21}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}free}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{21}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}init}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{21}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}load\discretionary {-}{}{}\_\discretionary {-}{}{}song}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{21}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}mode}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}play\discretionary {-}{}{}\_\discretionary {-}{}{}song}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{21}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}sensors\discretionary {-}{}{}\_\discretionary {-}{}{}t}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}set\discretionary {-}{}{}\_\discretionary {-}{}{}leds}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{21}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}set\discretionary {-}{}{}\_\discretionary {-}{}{}wheels}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{22}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{5}
+    \subitem {angle}, \hyperpage{7}
+    \subitem {bumper\discretionary {-}{}{}\_\discretionary {-}{}{}left}, 
+		\hyperpage{7}
+    \subitem {bumper\discretionary {-}{}{}\_\discretionary {-}{}{}right}, 
+		\hyperpage{7}
+    \subitem {button\discretionary {-}{}{}\_\discretionary {-}{}{}advance}, 
+		\hyperpage{7}
+    \subitem {button\discretionary {-}{}{}\_\discretionary {-}{}{}play}, 
+		\hyperpage{7}
+    \subitem {capacity}, \hyperpage{7}
+    \subitem {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}baud}, 
+		\hyperpage{7}
+    \subitem {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}io0}, 
+		\hyperpage{7}
+    \subitem {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}io1}, 
+		\hyperpage{7}
+    \subitem {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}io2}, 
+		\hyperpage{7}
+    \subitem {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}io3}, 
+		\hyperpage{7}
+    \subitem {cargo\discretionary {-}{}{}\_\discretionary {-}{}{}bay\discretionary {-}{}{}\_\discretionary {-}{}{}voltage}, 
+		\hyperpage{7}
+    \subitem {charge}, \hyperpage{7}
+    \subitem {charging\discretionary {-}{}{}\_\discretionary {-}{}{}state}, 
+		\hyperpage{7}
+    \subitem {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}frontleft}, 
+		\hyperpage{7}
+    \subitem {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}frontleft\discretionary {-}{}{}\_\discretionary {-}{}{}signal}, 
+		\hyperpage{7}
+    \subitem {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}frontright}, 
+		\hyperpage{7}
+    \subitem {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}frontright\discretionary {-}{}{}\_\discretionary {-}{}{}signal}, 
+		\hyperpage{7}
+    \subitem {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}left}, 
+		\hyperpage{7}
+    \subitem {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}left\discretionary {-}{}{}\_\discretionary {-}{}{}signal}, 
+		\hyperpage{7}
+    \subitem {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}right}, 
+		\hyperpage{7}
+    \subitem {cliff\discretionary {-}{}{}\_\discretionary {-}{}{}right\discretionary {-}{}{}\_\discretionary {-}{}{}signal}, 
+		\hyperpage{7}
+    \subitem {current}, \hyperpage{7}
+    \subitem {distance}, \hyperpage{7}
+    \subitem {home\discretionary {-}{}{}\_\discretionary {-}{}{}base\discretionary {-}{}{}\_\discretionary {-}{}{}charger\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{7}
+    \subitem {infrared\discretionary {-}{}{}\_\discretionary {-}{}{}byte}, 
+		\hyperpage{7}
+    \subitem {internal\discretionary {-}{}{}\_\discretionary {-}{}{}charger\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{7}
+    \subitem {number\discretionary {-}{}{}\_\discretionary {-}{}{}packets}, 
+		\hyperpage{7}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}mode}, 
+		\hyperpage{8}
+    \subitem {overcurrent\discretionary {-}{}{}\_\discretionary {-}{}{}driveleft}, 
+		\hyperpage{8}
+    \subitem {overcurrent\discretionary {-}{}{}\_\discretionary {-}{}{}driveright}, 
+		\hyperpage{8}
+    \subitem {overcurrent\discretionary {-}{}{}\_\discretionary {-}{}{}ld0}, 
+		\hyperpage{8}
+    \subitem {overcurrent\discretionary {-}{}{}\_\discretionary {-}{}{}ld1}, 
+		\hyperpage{8}
+    \subitem {overcurrent\discretionary {-}{}{}\_\discretionary {-}{}{}ld2}, 
+		\hyperpage{8}
+    \subitem {requested\discretionary {-}{}{}\_\discretionary {-}{}{}left\discretionary {-}{}{}\_\discretionary {-}{}{}velocity}, 
+		\hyperpage{8}
+    \subitem {requested\discretionary {-}{}{}\_\discretionary {-}{}{}radius}, 
+		\hyperpage{8}
+    \subitem {requested\discretionary {-}{}{}\_\discretionary {-}{}{}right\discretionary {-}{}{}\_\discretionary {-}{}{}velocity}, 
+		\hyperpage{8}
+    \subitem {requested\discretionary {-}{}{}\_\discretionary {-}{}{}velocity}, 
+		\hyperpage{8}
+    \subitem {song\discretionary {-}{}{}\_\discretionary {-}{}{}number}, 
+		\hyperpage{8}
+    \subitem {song\discretionary {-}{}{}\_\discretionary {-}{}{}playing}, 
+		\hyperpage{8}
+    \subitem {temperature}, \hyperpage{8}
+    \subitem {unused\discretionary {-}{}{}\_\discretionary {-}{}{}bytes}, 
+		\hyperpage{8}
+    \subitem {virtual\discretionary {-}{}{}\_\discretionary {-}{}{}wall}, 
+		\hyperpage{8}
+    \subitem {voltage}, \hyperpage{8}
+    \subitem {wall}, \hyperpage{8}
+    \subitem {wall\discretionary {-}{}{}\_\discretionary {-}{}{}signal}, 
+		\hyperpage{8}
+    \subitem {wheeldrop\discretionary {-}{}{}\_\discretionary {-}{}{}caster}, 
+		\hyperpage{8}
+    \subitem {wheeldrop\discretionary {-}{}{}\_\discretionary {-}{}{}left}, 
+		\hyperpage{8}
+    \subitem {wheeldrop\discretionary {-}{}{}\_\discretionary {-}{}{}right}, 
+		\hyperpage{8}
+  \item {oi\discretionary {-}{}{}\_\discretionary {-}{}{}update}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{22}
+  \item {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}c}, 
+		\hyperpage{15}
+    \subitem {go\discretionary {-}{}{}\_\discretionary {-}{}{}charge}, 
+		\hyperpage{15}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}alloc}, 
+		\hyperpage{15}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}byte\discretionary {-}{}{}\_\discretionary {-}{}{}rx}, 
+		\hyperpage{15}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}byte\discretionary {-}{}{}\_\discretionary {-}{}{}tx}, 
+		\hyperpage{15}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}free}, 
+		\hyperpage{16}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{16}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}load\discretionary {-}{}{}\_\discretionary {-}{}{}song}, 
+		\hyperpage{16}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}play\discretionary {-}{}{}\_\discretionary {-}{}{}song}, 
+		\hyperpage{16}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}set\discretionary {-}{}{}\_\discretionary {-}{}{}leds}, 
+		\hyperpage{16}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}set\discretionary {-}{}{}\_\discretionary {-}{}{}wheels}, 
+		\hyperpage{16}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}update}, 
+		\hyperpage{16}
+  \item {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{16}
+    \subitem {F\discretionary {-}{}{}O\discretionary {-}{}{}S\discretionary {-}{}{}C}, 
+		\hyperpage{18}
+    \subitem {go\discretionary {-}{}{}\_\discretionary {-}{}{}charge}, 
+		\hyperpage{20}
+    \subitem {M\discretionary {-}{}{}A\discretionary {-}{}{}X}, 
+		\hyperpage{18}
+    \subitem {M\discretionary {-}{}{}I\discretionary {-}{}{}N}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}B\discretionary {-}{}{}A\discretionary {-}{}{}U\discretionary {-}{}{}D}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}N}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}L}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}R\discretionary {-}{}{}I\discretionary {-}{}{}V\discretionary {-}{}{}E}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}F\discretionary {-}{}{}U\discretionary {-}{}{}L\discretionary {-}{}{}L}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}D\discretionary {-}{}{}S}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}A\discretionary {-}{}{}X}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}O\discretionary {-}{}{}T\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}S}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}U\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}U\discretionary {-}{}{}T\discretionary {-}{}{}S}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}L\discretionary {-}{}{}A\discretionary {-}{}{}Y}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}O\discretionary {-}{}{}W\discretionary {-}{}{}E\discretionary {-}{}{}R}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}F\discretionary {-}{}{}E}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}C\discretionary {-}{}{}R\discretionary {-}{}{}I\discretionary {-}{}{}P\discretionary {-}{}{}T}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}S\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}S}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}G}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}O\discretionary {-}{}{}T}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T}, 
+		\hyperpage{19}
+    \subitem {O\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}M}, 
+		\hyperpage{19}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}alloc}, 
+		\hyperpage{20}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}byte\discretionary {-}{}{}\_\discretionary {-}{}{}rx}, 
+		\hyperpage{20}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}byte\discretionary {-}{}{}\_\discretionary {-}{}{}tx}, 
+		\hyperpage{21}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}free}, 
+		\hyperpage{21}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{21}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}load\discretionary {-}{}{}\_\discretionary {-}{}{}song}, 
+		\hyperpage{21}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}play\discretionary {-}{}{}\_\discretionary {-}{}{}song}, 
+		\hyperpage{21}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}sensors\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{20}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}set\discretionary {-}{}{}\_\discretionary {-}{}{}leds}, 
+		\hyperpage{21}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}set\discretionary {-}{}{}\_\discretionary {-}{}{}wheels}, 
+		\hyperpage{22}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}update}, 
+		\hyperpage{22}
+    \subitem {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}0}, 
+		\hyperpage{20}
+    \subitem {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}1}, 
+		\hyperpage{20}
+    \subitem {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}2}, 
+		\hyperpage{20}
+    \subitem {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}3}, 
+		\hyperpage{20}
+    \subitem {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}4}, 
+		\hyperpage{20}
+    \subitem {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}5}, 
+		\hyperpage{20}
+    \subitem {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}6}, 
+		\hyperpage{20}
+    \subitem {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}7}, 
+		\hyperpage{20}
+  \item {overcurrent\discretionary {-}{}{}\_\discretionary {-}{}{}driveleft}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {overcurrent\discretionary {-}{}{}\_\discretionary {-}{}{}driveright}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {overcurrent\discretionary {-}{}{}\_\discretionary {-}{}{}ld0}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {overcurrent\discretionary {-}{}{}\_\discretionary {-}{}{}ld1}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {overcurrent\discretionary {-}{}{}\_\discretionary {-}{}{}ld2}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+
+  \indexspace
+
+  \item {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}0}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}1}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}2}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}3}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}4}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}5}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}6}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}7}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{20}
+  \item {ping\discretionary {-}{}{}\_\discretionary {-}{}{}init}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{26}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{29}
+  \item {ping\discretionary {-}{}{}\_\discretionary {-}{}{}read}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{26}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {read\discretionary {-}{}{}\_\discretionary {-}{}{}push\discretionary {-}{}{}\_\discretionary {-}{}{}buttons}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{26}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{30}
+  \item {read\discretionary {-}{}{}\_\discretionary {-}{}{}shaft\discretionary {-}{}{}\_\discretionary {-}{}{}encoder}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{26}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{30}
+  \item {report\discretionary {-}{}{}Data}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{26}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{30}
+  \item {requested\discretionary {-}{}{}\_\discretionary {-}{}{}left\discretionary {-}{}{}\_\discretionary {-}{}{}velocity}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {requested\discretionary {-}{}{}\_\discretionary {-}{}{}radius}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {requested\discretionary {-}{}{}\_\discretionary {-}{}{}right\discretionary {-}{}{}\_\discretionary {-}{}{}velocity}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {requested\discretionary {-}{}{}\_\discretionary {-}{}{}velocity}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+
+  \indexspace
+
+  \item {S\discretionary {-}{}{}L\discretionary {-}{}{}O\discretionary {-}{}{}W\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}E\discretionary {-}{}{}E\discretionary {-}{}{}D}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{25}
+  \item {send\discretionary {-}{}{}\_\discretionary {-}{}{}pulse}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{26}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{30}
+  \item {serial\discretionary {-}{}{}\_\discretionary {-}{}{}init}
+    \subitem {usart.\discretionary {-}{}{}c}, \hyperpage{22}
+    \subitem {usart.\discretionary {-}{}{}h}, \hyperpage{23}
+  \item {servo\discretionary {-}{}{}\_\discretionary {-}{}{}turn}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{26}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{30}
+  \item {shaft\discretionary {-}{}{}\_\discretionary {-}{}{}encoder\discretionary {-}{}{}\_\discretionary {-}{}{}init}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{27}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{30}
+  \item {song\discretionary {-}{}{}\_\discretionary {-}{}{}init}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{27}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{30}
+  \item {song\discretionary {-}{}{}\_\discretionary {-}{}{}number}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {song\discretionary {-}{}{}\_\discretionary {-}{}{}playing}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {stepper\discretionary {-}{}{}\_\discretionary {-}{}{}init}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{27}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{30}
+
+  \indexspace
+
+  \item {temperature}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {time2dist}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{27}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{30}
+  \item {timer2\discretionary {-}{}{}\_\discretionary {-}{}{}start}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{27}
+  \item {timer2\discretionary {-}{}{}\_\discretionary {-}{}{}stop}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{27}
+  \item {timer2\discretionary {-}{}{}\_\discretionary {-}{}{}tick}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{28}
+  \item {timer3\discretionary {-}{}{}\_\discretionary {-}{}{}init}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{27}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{31}
+  \item {turn\discretionary {-}{}{}\_\discretionary {-}{}{}clockwise}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{27}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{31}
+  \item {turn\discretionary {-}{}{}\_\discretionary {-}{}{}counterclockwise}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{27}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{31}
+
+  \indexspace
+
+  \item {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Flush}
+    \subitem {usart.\discretionary {-}{}{}c}, \hyperpage{22}
+    \subitem {usart.\discretionary {-}{}{}h}, \hyperpage{23}
+  \item {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Receive}
+    \subitem {usart.\discretionary {-}{}{}c}, \hyperpage{23}
+    \subitem {usart.\discretionary {-}{}{}h}, \hyperpage{23}
+  \item {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Recieve\discretionary {-}{}{}String}
+    \subitem {usart.\discretionary {-}{}{}c}, \hyperpage{23}
+    \subitem {usart.\discretionary {-}{}{}h}, \hyperpage{23}
+  \item {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Send\discretionary {-}{}{}String}
+    \subitem {usart.\discretionary {-}{}{}c}, \hyperpage{23}
+    \subitem {usart.\discretionary {-}{}{}h}, \hyperpage{23}
+  \item {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Transmit}
+    \subitem {usart.\discretionary {-}{}{}c}, \hyperpage{23}
+    \subitem {usart.\discretionary {-}{}{}h}, \hyperpage{23}
+  \item {unused\discretionary {-}{}{}\_\discretionary {-}{}{}bytes}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {update\discretionary {-}{}{}\_\discretionary {-}{}{}flag}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{28}
+  \item {usart.\discretionary {-}{}{}c}, \hyperpage{22}
+    \subitem {B\discretionary {-}{}{}A\discretionary {-}{}{}U\discretionary {-}{}{}D}, 
+		\hyperpage{22}
+    \subitem {F\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}P\discretionary {-}{}{}U}, 
+		\hyperpage{22}
+    \subitem {serial\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{22}
+    \subitem {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Flush}, 
+		\hyperpage{22}
+    \subitem {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Receive}, 
+		\hyperpage{23}
+    \subitem {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Recieve\discretionary {-}{}{}String}, 
+		\hyperpage{23}
+    \subitem {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Send\discretionary {-}{}{}String}, 
+		\hyperpage{23}
+    \subitem {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Transmit}, 
+		\hyperpage{23}
+  \item {usart.\discretionary {-}{}{}h}, \hyperpage{23}
+    \subitem {serial\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{23}
+    \subitem {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Flush}, 
+		\hyperpage{23}
+    \subitem {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Receive}, 
+		\hyperpage{23}
+    \subitem {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Recieve\discretionary {-}{}{}String}, 
+		\hyperpage{23}
+    \subitem {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Send\discretionary {-}{}{}String}, 
+		\hyperpage{23}
+    \subitem {U\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Transmit}, 
+		\hyperpage{23}
+  \item {util.\discretionary {-}{}{}c}, \hyperpage{23}
+    \subitem {A\discretionary {-}{}{}D\discretionary {-}{}{}C\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{25}
+    \subitem {A\discretionary {-}{}{}D\discretionary {-}{}{}C\discretionary {-}{}{}\_\discretionary {-}{}{}read}, 
+		\hyperpage{25}
+    \subitem {calc\discretionary {-}{}{}Cm}, \hyperpage{25}
+    \subitem {current\discretionary {-}{}{}\_\discretionary {-}{}{}time}, 
+		\hyperpage{28}
+    \subitem {F\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}E\discretionary {-}{}{}E\discretionary {-}{}{}D}, 
+		\hyperpage{25}
+    \subitem {I\discretionary {-}{}{}S\discretionary {-}{}{}R}, 
+		\hyperpage{25}
+    \subitem {init\discretionary {-}{}{}\_\discretionary {-}{}{}push\discretionary {-}{}{}\_\discretionary {-}{}{}buttons}, 
+		\hyperpage{25}
+    \subitem {M\discretionary {-}{}{}E\discretionary {-}{}{}D\discretionary {-}{}{}I\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}E\discretionary {-}{}{}E\discretionary {-}{}{}D}, 
+		\hyperpage{25}
+    \subitem {move\discretionary {-}{}{}\_\discretionary {-}{}{}backward}, 
+		\hyperpage{25}
+    \subitem {move\discretionary {-}{}{}\_\discretionary {-}{}{}forward}, 
+		\hyperpage{25}
+    \subitem {move\discretionary {-}{}{}\_\discretionary {-}{}{}stepper\discretionary {-}{}{}\_\discretionary {-}{}{}motor\discretionary {-}{}{}\_\discretionary {-}{}{}by\discretionary {-}{}{}\_\discretionary {-}{}{}step}, 
+		\hyperpage{26}
+    \subitem {ping\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{26}
+    \subitem {ping\discretionary {-}{}{}\_\discretionary {-}{}{}read}, 
+		\hyperpage{26}
+    \subitem {read\discretionary {-}{}{}\_\discretionary {-}{}{}push\discretionary {-}{}{}\_\discretionary {-}{}{}buttons}, 
+		\hyperpage{26}
+    \subitem {read\discretionary {-}{}{}\_\discretionary {-}{}{}shaft\discretionary {-}{}{}\_\discretionary {-}{}{}encoder}, 
+		\hyperpage{26}
+    \subitem {report\discretionary {-}{}{}Data}, \hyperpage{26}
+    \subitem {S\discretionary {-}{}{}L\discretionary {-}{}{}O\discretionary {-}{}{}W\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}E\discretionary {-}{}{}E\discretionary {-}{}{}D}, 
+		\hyperpage{25}
+    \subitem {send\discretionary {-}{}{}\_\discretionary {-}{}{}pulse}, 
+		\hyperpage{26}
+    \subitem {servo\discretionary {-}{}{}\_\discretionary {-}{}{}turn}, 
+		\hyperpage{26}
+    \subitem {shaft\discretionary {-}{}{}\_\discretionary {-}{}{}encoder\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{27}
+    \subitem {song\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{27}
+    \subitem {stepper\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{27}
+    \subitem {time2dist}, \hyperpage{27}
+    \subitem {timer2\discretionary {-}{}{}\_\discretionary {-}{}{}start}, 
+		\hyperpage{27}
+    \subitem {timer2\discretionary {-}{}{}\_\discretionary {-}{}{}stop}, 
+		\hyperpage{27}
+    \subitem {timer2\discretionary {-}{}{}\_\discretionary {-}{}{}tick}, 
+		\hyperpage{28}
+    \subitem {timer3\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{27}
+    \subitem {turn\discretionary {-}{}{}\_\discretionary {-}{}{}clockwise}, 
+		\hyperpage{27}
+    \subitem {turn\discretionary {-}{}{}\_\discretionary {-}{}{}counterclockwise}, 
+		\hyperpage{27}
+    \subitem {update\discretionary {-}{}{}\_\discretionary {-}{}{}flag}, 
+		\hyperpage{28}
+    \subitem {wait\discretionary {-}{}{}\_\discretionary {-}{}{}ms}, 
+		\hyperpage{27}
+  \item {util.\discretionary {-}{}{}h}, \hyperpage{28}
+    \subitem {A\discretionary {-}{}{}D\discretionary {-}{}{}C\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{29}
+    \subitem {A\discretionary {-}{}{}D\discretionary {-}{}{}C\discretionary {-}{}{}\_\discretionary {-}{}{}read}, 
+		\hyperpage{29}
+    \subitem {calc\discretionary {-}{}{}Cm}, \hyperpage{29}
+    \subitem {init\discretionary {-}{}{}\_\discretionary {-}{}{}push\discretionary {-}{}{}\_\discretionary {-}{}{}buttons}, 
+		\hyperpage{29}
+    \subitem {move\discretionary {-}{}{}\_\discretionary {-}{}{}backward}, 
+		\hyperpage{29}
+    \subitem {move\discretionary {-}{}{}\_\discretionary {-}{}{}forward}, 
+		\hyperpage{29}
+    \subitem {move\discretionary {-}{}{}\_\discretionary {-}{}{}stepper\discretionary {-}{}{}\_\discretionary {-}{}{}motor\discretionary {-}{}{}\_\discretionary {-}{}{}by\discretionary {-}{}{}\_\discretionary {-}{}{}step}, 
+		\hyperpage{29}
+    \subitem {ping\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{29}
+    \subitem {ping\discretionary {-}{}{}\_\discretionary {-}{}{}read}, 
+		\hyperpage{29}
+    \subitem {read\discretionary {-}{}{}\_\discretionary {-}{}{}push\discretionary {-}{}{}\_\discretionary {-}{}{}buttons}, 
+		\hyperpage{30}
+    \subitem {read\discretionary {-}{}{}\_\discretionary {-}{}{}shaft\discretionary {-}{}{}\_\discretionary {-}{}{}encoder}, 
+		\hyperpage{30}
+    \subitem {report\discretionary {-}{}{}Data}, \hyperpage{30}
+    \subitem {send\discretionary {-}{}{}\_\discretionary {-}{}{}pulse}, 
+		\hyperpage{30}
+    \subitem {servo\discretionary {-}{}{}\_\discretionary {-}{}{}turn}, 
+		\hyperpage{30}
+    \subitem {shaft\discretionary {-}{}{}\_\discretionary {-}{}{}encoder\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{30}
+    \subitem {song\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{30}
+    \subitem {stepper\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{30}
+    \subitem {time2dist}, \hyperpage{30}
+    \subitem {timer3\discretionary {-}{}{}\_\discretionary {-}{}{}init}, 
+		\hyperpage{31}
+    \subitem {turn\discretionary {-}{}{}\_\discretionary {-}{}{}clockwise}, 
+		\hyperpage{31}
+    \subitem {turn\discretionary {-}{}{}\_\discretionary {-}{}{}counterclockwise}, 
+		\hyperpage{31}
+    \subitem {wait\discretionary {-}{}{}\_\discretionary {-}{}{}ms}, 
+		\hyperpage{31}
+
+  \indexspace
+
+  \item {virtual\discretionary {-}{}{}\_\discretionary {-}{}{}wall}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {voltage}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+
+  \indexspace
+
+  \item {wait\discretionary {-}{}{}\_\discretionary {-}{}{}ms}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{27}
+    \subitem {util.\discretionary {-}{}{}h}, \hyperpage{31}
+  \item {wall}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {wall\discretionary {-}{}{}\_\discretionary {-}{}{}signal}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {wheeldrop\discretionary {-}{}{}\_\discretionary {-}{}{}caster}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {wheeldrop\discretionary {-}{}{}\_\discretionary {-}{}{}left}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {wheeldrop\discretionary {-}{}{}\_\discretionary {-}{}{}right}
+    \subitem {oi\discretionary {-}{}{}\_\discretionary {-}{}{}t}, 
+		\hyperpage{8}
+  \item {width}
+    \subitem {object\discretionary {-}{}{}\_\discretionary {-}{}{}s}, 
+		\hyperpage{5}
+
+\end{theindex}
