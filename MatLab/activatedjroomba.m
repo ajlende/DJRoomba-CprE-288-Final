@@ -1,5 +1,7 @@
 %% BOT GUI
-%Author: Alex 
+%Author: Alex
+%Also worked on by: Ben, Chris
+%Documentation by Ben
 %Push button function added by: Christofer Sheafe
 
 %Utilizes controlpanel.m to control bot via GUI. See controlpanel for
@@ -60,6 +62,9 @@ function activatedjroomba_OpeningFcn(hObject, eventdata, handles, varargin)
 % varargin   command line arguments to activatedjroomba (see VARARGIN)
 
 % Choose default command line output for activatedjroomba
+%These are the global variables used in our GUI's
+%pushbutton callbacks (functions that trigger whenever
+%a button is pushed
 handles.output = hObject;
 handles.count = 1;
 handles.port = 0;
@@ -86,19 +91,32 @@ varargout{1} = getappdata(hObject,'output');
 end
 
 % --------------------------------------------------------------------
+%The callback for our "connect to bluetooth" dropdown option.
+%We create a matlab serial object named "port" that we pass into
+%our global variables, which can be accessed by other callbacks.
+%Matlab serial objects are used for reading and writing to the robot
 function hobject = openbluetooth_Callback(hObject, eventdata, handles)
 % hObject    handle to openbluetooth (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 try
+    %SerialInitV3 is the 3rd version of our serial initiation script.
+    %It returns a serial object that should be whatever is connected to
+    %'COM4' (The port for our bluetooth module)
     handles.port = serialinitv3('COM4',hObject,handles);
+    
+    %Update our global variables.  (Port)
     guidata(hObject,handles)
 catch err
+    %If there is an error, send it to our message box in the GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
 % --------------------------------------------------------------------
+%Same logic as the Bluetooth connection callback.  Simply use a different
+%BaudRate (38400) and a different port ('COM1') as we are attempting
+%to connect to the serial cable
 function openserial_Callback(hObject, eventdata, handles)
 % hObject    handle to openserial (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -107,76 +125,109 @@ try
     handles.port = serialinitv3('COM1',hObject,handles);
     guidata(hObject,handles)
 catch err
+    %If there is an error, send it to our message box in the GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
 % --------------------------------------------------------------------
+%Closes all serial objects and kills all the connections.
 function closeall_Callback(hObject, eventdata, handles)
 % hObject    handle to closeall (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+%Matlab script that does the described functionality
 closeall
 end
 
-% --- Executes on button press in smallscan.
+% --- Callback for our smallscan command (Scan from 45 deg to 135 deg)
 function smallscan_Callback(hObject, eventdata, handles)
 % hObject    handle to smallscan (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-%port = getappdata(hObject,'port');
+
+%Empty the serial port information buffer before asking for new information
+%Necessrary to ensure a standardized input from the device
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable);
     display('flushed')
 end
 try
+    %Matlab script that writes an 's' character to our robot, and then
+    %waits for/ recieves standardized input back from the device
     smallscan(handles.port);
 catch err
+    %If there is an error, send it to our message box in the GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
-% --- Executes on button press in bigscan.
+% --- Callback for our bigscan command (Scan from 0 deg to 180 deg)
 function bigscan_Callback(hObject, eventdata, handles)
 % hObject    handle to bigscan (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+%Empty the serial port information buffer before asking for new information
+%Necessrary to ensure a standardized input from the device
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable);
 end
 try
+    %Matlab script that writes an 'S' character to our robot, and then
+    %waits for/ recieves standardized input back from the device
     bigscan(handles.port)
 catch err
+    %If there is an error, send it to our message box in the GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
-% --- Executes on button press in turnleft.
+% --- Callback for left turn command
 function turnleft_Callback(hObject, eventdata, handles)
 % hObject    handle to turnleft (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+%Empty the serial port information buffer before asking for new information
+%Necessrary to ensure a standardized input from the device
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable);
 end
-% movement('left',handles.number,handles.port)
+
 try
+    %Debug code, prints out a global variable
     %display(handles.number);
+    
+    %Send an 'l', which initiates the turn left command on the robot
     fwrite(handles.port,'l')
+    
+    %Send a number specified in our "number" textbox.  This is a scalar
+    %variable that tells the robot how many degrees to turn
+    %Turns number * 10 degrees
     fwrite(handles.port,handles.number)
     start = clock;
     TimeOut = 6;
     
     while(handles.port.BytesAvailable == 0)
        %block until we see data 
+       %Wait until 6 seconds have passed, then give up on recieiving
+       %Necessary to not hang up matlab when the robot doesn't send back
+       %Standard input in time
        if(etime(clock, start) > TimeOut)
            break;
        end
     end
+    
+    %Once we have receieved a string from the port, display
+    %Tells us how many degrees have been turned, and how long it took
+    %for us to turn
     display(fgets(handles.port));
     display(etime(clock,start));
-    %appendeditbox(str,handles,hObject)
+
 catch err
+    %If there is an error, send it to our message box in the GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
@@ -186,57 +237,81 @@ function turnright_Callback(hObject, eventdata, handles)
 % hObject    handle to turnright (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+%Empty the serial port information buffer before asking for new information
+%Necessrary to ensure a standardized input from the device
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable);
 end
-% movement('right',handles.number,handles.port)
+
 try
+    %Send an 'r', which initiates the turn left command on the robot
     fwrite(handles.port,'r')
+    
+    %Send a number specified in our "number" textbox.  This is a scalar
+    %variable that tells the robot how many degrees to turn
+    %Turns number * 10 degrees
     fwrite(handles.port,handles.number)
     start = clock;
     TimeOut = 6;
+    
     while(handles.port.BytesAvailable == 0)
-       %block until we see data
+       %block until we see data or request times out
        if(etime(clock, start) > TimeOut)
            break;
        end
     end
+    
+    %Once we have receieved a string from the port, display
+    %Tells us how many degrees have been turned, and how long it took
+    %for us to turn
     display(fgets(handles.port));
     display(etime(clock,start));
-    %appendeditbox(str,handles,hObject)
+
 catch err
+    %If there is an error, send it to our message box in the GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
 
-% --- Executes on button press in foreward.
+% --- Executes on button press in forward.
+%Somebody mispelled forward, not enough time to fix
 function foreward_Callback(hObject, eventdata, handles)
 % hObject    handle to foreward (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+%Empty the serial port information buffer before asking for new information
+%Necessrary to ensure a standardized input from the device
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable);
 end
 
+%Debug code for a previously used command 'Movement.'  Not used in final
 %display(handles.port.ReadAsyncMode);
 % movement('forward',handles.number,handles.port)
 try
-    %handles.skip = 0;
+    %Update our global variables
     guidata(hObject,handles)
+    
+    %Initiate move forward command
     fwrite(handles.port,'f')
+    
+    %Send scalar for how many cm to move (number * 10 cm)
     fwrite(handles.port,handles.number)
     while(handles.port.BytesAvailable == 0)
        %block until we see data 
     end
+    %Display how many cm were moved
          display(fgets(handles.port));
     while(handles.port.BytesAvailable == 0)
        %block until we see data 
     end
+    %Display if any input stimuli were experienced( line/cliff/bumper)
          display(fgets(handles.port));
     
-    %str2 = fscanf(handles.port);
-    %appendeditbox(str,handles,hObject);
 catch err
+    %If there is an error, send it to our message box in the GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
@@ -246,17 +321,25 @@ function back_Callback(hObject, eventdata, handles)
 % hObject    handle to back (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+%Empty the serial port information buffer before asking for new information
+%Necessrary to ensure a standardized input from the device
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable);
 end
-% movement('back',handles.number,handles.port);
+
 try
+    %Write a 'b' which moves our bot back 5 cm
     fwrite(handles.port,'b')
+    
     while(handles.port.BytesAvailable == 0)
        %block until we see data 
     end
+    %Display how many cm were moved backwards by the robot from the
+    %distance sensors
          display(fgets(handles.port));
 catch err
+    %If there is an error, send it to our message box in the GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
@@ -267,13 +350,17 @@ function flush_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 try
-    %fwrite(handles.port,'!')
+    %Look at our input port buffer, and if there is information in it
+    %clear it all by reading.
     if (handles.port.BytesAvailable ~= 0)
+        %There is info, read it
         fread(handles.port, handles.port.BytesAvailable);
     else
+        %There is no info, display 'Buffer is empty'
         appendeditbox('Buffer is empty.',handles,hObject);
     end
 catch err
+    %If there is an error, send it to our message box in the GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
@@ -283,23 +370,32 @@ function reportdata_Callback(hObject, eventdata, handles)
 % hObject    handle to reportdata (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+%Flush input info
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable)
 end
 try
+    %Sends a 'd' which calls for an update on our current sensor data
     fwrite(handles.port, 'd');
     start = clock;
     TimeOut = 6;
+    
     while(handles.port.BytesAvailable == 0)
-       %block until we see data 
+       %block until we see data or time out in 6 seconds
         if(etime(clock, start) > TimeOut)
            break;
        end
     end
+    
+    %Display the string containing our requested information
     display(fgets(handles.port));
+    
+    %Display how long it took to recieve the info
     display(etime(clock, start));
-    %appendeditbox(str,handles,hObject);
+
 catch err
+    %If there is an error, send it to our message box in the GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end
@@ -310,9 +406,11 @@ function number_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of number as text
-%        str2double(get(hObject,'String')) returns contents of number as a double
+%Sets the number value to whatever number is entered in the
+%number textbox
 handles.number = get(hObject,'String');
+
+%Finalizes the update of the global handles variable
 guidata(hObject, handles);
 end
 
@@ -322,8 +420,8 @@ function number_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
+% Edit controls usually have a white background on Windows.
+% Set aesthetic properties
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -334,8 +432,7 @@ function editmsg_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of editmsg as text
-%        str2double(get(hObject,'String')) returns contents of editmsg as a double
+%Not implemented.  Used to test out callbacks.
 display('messages_Callback called')
 end
 
@@ -345,8 +442,7 @@ function editmsg_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
+% Used for editmsg aesthetics, not implemented.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -359,12 +455,8 @@ function testmsg_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 str = 'testmsg_Callback called';
-% display(str)
-% handles.message = sprintf(strcat(num2str(handles.count),':\t',str,'\n',handles.message));
-% handles.message = sprintf('%3d: %s\n%s',handles.count,str,handles.message);
-% handles.count = handles.count + 1;
-% guidata(hObject, handles);
-% set(handles.editmsg,'String',handles.message)
+
+%Not implemented.  Used to test out callbacks.
 appendeditbox(str,handles,hObject);
 end
 
@@ -373,6 +465,8 @@ function clrmsg_Callback(hObject, eventdata, handles)
 % hObject    handle to clrmsg (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+%Not implemented.  Used for testing handles variables
 handles.message = 'cleared';
 handles.count = 1;
 guidata(hObject,handles)
@@ -385,12 +479,16 @@ function Song_Callback(hObject, eventdata, handles)
 % hObject    handle to Song (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+%Flush input buffer data
 if (handles.port.BytesAvailable ~= 0)
     fread(handles.port, handles.port.BytesAvailable)
 end
 try
+    %Send a 'Q' character over serial.  Robot will play 'Take on Me'
     fwrite(handles.port, 'Q')
 catch err
+    %Display error in GUI
     appendeditbox(getReport(err,'extended','hyperlinks','off'),handles,hObject);
 end
 end

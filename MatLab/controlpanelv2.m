@@ -6,6 +6,8 @@
 %baud: baud setting for serial comm.
 %mode: 0 = move, 1 = scan
 %commands: 'forward','left','right','smallscan','bigscan'
+%Not implemented in final project.  Previously used as global callback
+%function.
 %%
 function null = controlpanelv2(mode,command)
 baud = 57600;
