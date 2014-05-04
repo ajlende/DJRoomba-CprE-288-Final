@@ -1,36 +1,81 @@
-Team DJ Roomba
---------------
+CPRE 288 Final Project
+Group Name: DJ Roomba
+Contributing Members: Ben Williams, Alex Lende, Nic Dubois, Nick Montelibano, Chris Sheafe
 
+Project Overview
+----------------
 
+We opted to use a GUI written for MatLab to control our Robot.  The general control strategy for our
+system was to send single characters from the desktop environment via a Bluetooth module on the iRobot
+Create platform.  We would then block in our MatLab environment, listening for a handshake from the robot,
+confirming the completion of its action, and any necessary environmental stimuli it may have encountered.
+We would plot all sonar and infra-red information on a polar graph in our GUI.
 
-Notes
---------------
-ADDING, COMMITTING, PUSHING
+Robot Functionality (Inputs, Actions and Outputs)
+-------------------------------------------------
 
-1) Update local files in branch with 'git fetch'
+Our robot listens continously for non-null input from its USART port.  It analyses the information
+recieved as an 8 bit character, and decides which action to do based on this value.
 
-2) Once in desired directory, 'git add [file name]' to add file.  only needed to be done once per file
+'s' - Smallscan
+A small scan cancels all robot movement, and reads in values from the sonar and infra-red range finder
+while sweeping the stepper motor in 2 degree increments from 45 degrees to 135 degrees.  The robot
+sends degrees, sonar distance and infra-red distance as a string over USART at each angle.
 
-3) 'git commit -m [message]' to commit changes to the local repository
+'S' - Bigscan
+A big scan cancels all robot movement, and reads in values from the sonar and infared range finder
+while sweeping the stepper motor in 2 degree increments from 0 degrees to 180 degrees.  The robot
+sends degrees, sonar distance and infared distance as a string over USART at each angle.
 
-4) 'git push origin [branch]' pushes all commits to the branch on the server
+'f' - Forward
+Forward sets the robot to block while it waits for a scalar character to tell it how far forward to
+move.  Our range of scalars was between a 1 and 9.  The robot would attempt to move forward a
+distance equal to 10 * scalar centimeters.  It would check every wheel cycle for stimuli from the
+white line sensor, the wheel drop sensor (falling in a cliff), and the right and left bumper.
+If it encountered any of these, it would immediately stop and send 2 strings back to the GUI,
+detailing how far it moved and which input stimuli was encountered.  If a bumper was triggered,
+the robot would also immediately move backwards 10 centimers.
 
-5) Once ready to add everything in your branch to the final project, submit a Merge Request via the Merge Requests Tab in GitLab
+'b' - Backwards
+Backwards set the robot to move backwards 5 centimeters, without question.  The robot ignored input
+stimuli.  We needed this because otherwise the robot would have no way to move while its environment
+sensors were triggered.
 
+'l' - Turn Left
+Left set the robot to block while it waited for a scalar informing how many degrees to turn.
+Our range was from 1 to 9 as in the forward function.  It would turn 10 * scalar degrees to the left.
+It would continuously check all input stimuli (barring bumpers) as in forward, and stop if any 
+were encountered.  We ignored bumper because the robot would not change position while turning, and
+we didn't want phantom data to prevent us from turning.  The robot would then send a string back to
+the GUI informing the user how many degrees were turned, and which sensors were triggered, if any.
 
-USING BRANCHES
+'r' - Turn Right
+Right acted the exact same as Turn Left, except that the robot turned to the right.
 
-Branches have been created for the MatLab and iRobot portions of the project. Each person should then create their own
-branch off of that.
+'d' - Send Data
+Send Data would simply return a string showing the current values on all of the robots input sensors.
+This was useful for debugging as well as check whether we were still on a line after reversing.
 
-1) On the local machine, 'git branch [branch name]' to create the branch.
+'Q' - Play Song
+If the robot received a 'Q', it would play a snippet of the song 'Take On Me" by Aha.  This was done
+for fun and for the 5 points extra credit.  It was done when the driver(s) of the device believed it
+to be in the end zone.
 
-2) 'git checkout [branch name]' to switch to the branch you are working on.
+GUI Functionality
+-----------------
 
-3) Make changes to your branch
+Message Box
+Showed the user all of the output string from both the Robot and the various
+scripts used to send commands to the bot.
 
-4) 'git add [file name]' to tell git to track the file
+Buttons
+Standard windows push-buttons set on the right side of the diagram.  There was a button for every function
+detailed in the Robot functionality.
 
-5) 'git commit -m [message]' to commit the changes
+Graph
+A radial plot of the most recent data sent by the robot.  It would plot distance over radians.
 
-6) 'git push origin [branch name]' to push your branch to the server
+Connection Drop Down
+We made a drop down menu with callbacks for either connecting to bluetooth with a baud rate of 57600
+or a serial cable with a baud rate of 38400.  The drop down also gave the option to disconnect the GUI
+from all connections.
