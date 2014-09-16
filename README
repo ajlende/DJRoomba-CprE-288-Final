@@ -5,6 +5,8 @@ Contributing Members: Ben Williams, Alex Lende, Nic Dubois, Nick Montelibano, Ch
 Project Overview
 ----------------
 
+Our final goal was to develop the functionality of an automated Robot to navigate various terrain through use of a user-friendly GUI that recieves sensor data (sonar, infrared, etc) and sends commands to the Robot through bluetooth communication.
+
 We opted to use a GUI written for MatLab to control our Robot.  The general control strategy for our
 system was to send single characters from the desktop environment via a Bluetooth module on the iRobot
 Create platform.  We would then block in our MatLab environment, listening for a handshake from the robot,
